@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="648a54d6-a26a-45af-9154-dab9bb42a68e" name="ImageProcessing" linkedPackageId="37f8238b-be31-45c8-bb36-57b5d3d06e09" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="5e0c3ef6-8644-4776-acad-f6b0846a2d4a">
+      <elementDefinition Id="2a7142c1-ce6a-4966-8c1e-25446fb48eeb" />
+      <body>graphic object
+abstract class??</body>
+    </comment>
+    <comment Id="93589e41-08b3-44d4-a8c9-f834e0a70c16">
+      <elementDefinition Id="d06c4814-0757-4f0f-b549-cde81a6bdd25" />
+      <body>einzelne objekte zruckgeben</body>
+    </comment>
+    <comment Id="696014f3-87ea-43bf-bd70-3f0c961c89d0">
+      <elementDefinition Id="c3d2ec2a-b149-4fd1-acf4-590b41541897" />
+      <body>irgendwo da dateien einlesen, wahrscheinlich im image</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="936a098c-161b-4b1b-b8e9-99199e63b1fe">
+      <profileInstance Id="820ab5d3-0f78-4e2a-8f42-382ffd517394" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="f31a3114-a6b7-408a-a325-bc64b6ffe2d1">
+      <profileInstance Id="6d8fce99-76d4-47a5-9a86-433474b324dd" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ad539174-8cf2-48ec-ac95-8c511aae4b06" name="Object" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4885bdcd-414c-4ca3-b979-09e8bf070d5e" />
+        <ownedOperationsInternal>
+          <operation Id="612c9d8d-0f61-4226-ab6e-2456692d57fd" name="~Object" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cbcd7a17-19ea-4ea8-a0c3-e92beda69da9" />
+          </operation>
+          <operation Id="2c36f498-c1c7-47bd-9878-33fabc6db9b6" name="Object" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c78e8c4c-57c8-412b-82f0-052951abc568" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b6b6bb38-788d-4715-a9ca-8c6db192dbbe" name="Image" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9cebb1d6-1ec7-4a4b-a979-bbc75c582a53" />
+        <generalsInternal>
+          <generalization Id="b74e4137-adbc-4bfe-a323-f6ac16f4e245" isSubstitutable="false">
+            <classMoniker Id="ad539174-8cf2-48ec-ac95-8c511aae4b06" LastKnownName="Object" />
+            <elementDefinition Id="ee607df6-b378-410a-a1fd-ea5c8b325a8c" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="b2794ef0-ad65-4c5b-a09b-efee183e75c4" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="b5ee11e4-947e-46e8-819f-1c117f37b212" LastKnownName="IRectangle" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="de8ccf37-c537-4a69-ac44-8db9f0ac8c24" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1a79a0d8-f20b-4cc9-825a-b9a44c27189c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e40aa2fa-83b8-4480-8ddc-79a7893a5cb4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="d92c2482-6b16-4840-8ece-22f4930063ba" name="Lower" value="*">
+                      <elementDefinition Id="7e553a4e-d018-4c9f-b68e-6f109a02b67d" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="89c6ef3b-c1fb-4d6d-942a-ff196c091fbd" name="Upper" value="*">
+                      <elementDefinition Id="6d96a967-b931-4480-b27e-d6faafb854cb" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="94f1d39b-15dc-479b-9dbc-117224fb5312" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="71aaa6b9-83c9-4b84-952f-a7cd75d07e61" />
+          </association>
+          <association Id="1cbf5f7a-1490-4f11-87fb-d0f33db5e1f6" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="307cb47d-b8a9-45f8-a5a7-6cad0d14aefa" LastKnownName="ICircle" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="160bd1e4-2a78-462f-a307-b4c38331f6e0" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6cb1c299-406c-497d-808b-53b273605b59" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b2479c4-00bf-44bc-b52b-76d6f8940ec2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="62cc924a-c70b-41bf-a07b-549c85e0a32a" name="Lower" value="*">
+                      <elementDefinition Id="f18d464e-2a1f-4612-bde9-e0618a0426aa" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="8c503f40-aee3-4b83-ba3f-bab0ee9df0f4" name="Upper" value="*">
+                      <elementDefinition Id="265b63f5-24e7-4717-b114-c7e2c54f9fa8" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="23f8385e-c6a0-46bd-942e-9b35e64619ff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e62f5ef9-a7f7-489b-8e53-ddc3349b8f85" />
+          </association>
+          <association Id="629f95a3-2946-4cb3-93e8-98d8a38647f7" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="690ec693-3d16-4dcc-8669-7dbca39f1e9a" LastKnownName="IGraphicObjectFactory" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49d2a7bf-2380-4e1c-8a1d-f905856ee807" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="546341a0-f653-43f5-bb74-731ae025604d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c91b696-c1d1-4405-8345-e26a0b923f3e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b4d427d8-46e4-4bd3-b9bb-e7cbd9f25f69" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c3858de8-d157-42e0-97b2-36eedb470619" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="8a2a4609-3b0f-45c7-9b76-99ac4cc2e548" name="mFactory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a0e0ac1c-eff6-4b05-84d3-99592c6a0067" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cbd329b1-39ab-4e09-8249-221143894282" LastKnownName="IGraphicObjectFactory*" />
+            </type_NamedElement>
+          </property>
+          <property Id="87cf58c9-d02a-44f6-bb69-30ad8a8a4500" name="mCircles" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4440e976-2a22-4a08-98e5-1168c13d6148" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="40f6de35-45f4-4796-be26-020e1643c065" LastKnownName="list*&lt;ICircle*&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="416ad093-c931-4674-b1c9-0d785aba466d" name="mRectangles" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33dc2066-6b79-4d26-8444-5998c88f3b28" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e986208c-d085-44ec-a0bb-e1f65c5db935" LastKnownName="list*&lt;IRectangle*&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="168de7ed-9d45-4fbe-a47d-c26f768abe7c" name="AddGraphicObjects" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5ffaae11-7414-44a9-ae86-188e4dd33a87" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="76bf7f50-1204-4849-bf91-a66bef67b909" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="ee35f69d-13e2-41c0-8baa-32365158826e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6362e62a-be0e-431c-b476-ab5045191d68" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="b05f668e-ebd1-4f64-8496-a52d0a6dfecc" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="91d6f647-d7a6-413f-befe-de4d9a748d13" name="Image" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7b7c9ecd-c966-4409-9b91-8d50a0d92218" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9709cf9c-19a2-4b9f-a387-11f09e8ff194" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="922773f3-dc4b-4e82-aff9-d2fffb8e0380" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="612ccea6-2ac8-4976-b559-176d20b808c3" name="IGraphicObjectFactory*" direction="In" isUnique="false">
+                  <elementDefinition Id="27e40dfd-39ce-44b9-8791-6db16b8b93ec" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7a590e08-ef51-4982-a170-85de063ab6f1" name="ImageManagement" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6aa82cbb-ed2d-4034-899e-90585717b4eb" />
+        <generalsInternal>
+          <generalization Id="fbcf9089-76b0-4a49-9c9b-9cec2078cec1" isSubstitutable="false">
+            <classMoniker Id="eac2baa5-c7f0-4256-a804-9bda7d8d735a" LastKnownName="SingletonBase" />
+            <elementDefinition Id="ad3583db-e23c-4d47-bc4b-b500097af0ee" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="0124d21f-ad67-46d0-8ad1-09c90c653df3" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b6b6bb38-788d-4715-a9ca-8c6db192dbbe" LastKnownName="Image" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3851cc8b-f73b-4635-b77f-f96a1d4c10e2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5c4f7062-be14-4282-b20d-5b12cdc3c87f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6257fc70-97d1-449e-9ec4-1d0f68764298" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="6080b8ac-3159-4606-9b3b-81f03bbe70c8" name="Lower" value="*">
+                      <elementDefinition Id="329046f4-fcd2-491d-a00e-fcb466e9d338" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="e90bc8f4-30f0-4c02-ab64-187d1f9d267f" name="Upper" value="*">
+                      <elementDefinition Id="325b67e6-76f7-4c42-98c6-384b162a2c92" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="bcb07317-3029-440a-8715-d2ca07f8167c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c406dac2-0d3c-4aa2-a9c9-121580d8fbf3" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="9f7d8ce8-801b-4296-9de6-7e77129a54ce" name="mImages" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="06ff8eaf-0a46-49c4-8b4b-cfad8c812821" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bfe502f9-0a4b-498d-8487-cd7108b08484" LastKnownName="list&lt;Image*&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="719d67cb-ac63-49b8-a1fe-f7bbb8fc7cf9" name="AddImage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3bba7e9d-3097-41d6-84a1-68b7e5a8b30a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d64bceea-7173-4e4b-b5b7-707cfbfa085f" direction="Return" isUnique="false">
+                  <elementDefinition Id="27e13346-eb4a-4a9e-a385-dae349819eb1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68cc06ac-0c41-4400-8970-bf9250228279" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="217ff41c-78f2-4bee-b8db-6484350428df" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="a70b8497-59e7-427b-bde8-0a4527bcbdf9" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0d8d4915-3345-4bcb-af65-a59a82b23a18" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="62a31610-c7be-4daa-91dd-0f349e38fcb9" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ea8c76b3-5139-4c02-a015-2918823bdb13" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="fed66836-7986-4fd4-8cc6-dc51a783b6ed" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cc3ef82f-17cb-4f2d-a5a8-78aa597c9157" name="IGraphicobjectFactory*" direction="In" isUnique="false">
+                  <elementDefinition Id="15298984-b736-4009-a51b-61ac72937129" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="b5ee11e4-947e-46e8-819f-1c117f37b212" name="IRectangle" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a6b9f983-f707-4888-8a67-a827450e59a2" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b70f2487-4e41-4b4f-ae15-d55f1ade1620" name="RectangleFilled" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7fbb3c58-5411-424a-8494-f11de494ffd7" />
+        <suppliersInternal>
+          <interfaceRealization Id="edfcb690-d737-469b-85fc-ee907f08d2f7">
+            <interfaceMoniker Id="b5ee11e4-947e-46e8-819f-1c117f37b212" LastKnownName="IRectangle" />
+            <elementDefinition Id="10dd5ee4-8b7b-4110-85ab-84ca9d834c65" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f7ffb97c-bf48-4fef-8d0a-503e5da8cf11" name="RectangleEmpty" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="77e340e7-11e0-42d5-88ba-38fdf9894d39" />
+        <suppliersInternal>
+          <interfaceRealization Id="87ed069f-ba44-4966-b28a-234b99f6c52e">
+            <interfaceMoniker Id="b5ee11e4-947e-46e8-819f-1c117f37b212" LastKnownName="IRectangle" />
+            <elementDefinition Id="60540d54-4219-4199-862f-a1f1f92ff71c" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="307cb47d-b8a9-45f8-a5a7-6cad0d14aefa" name="ICircle" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5e961f41-cfcd-4b27-9c75-d3c517794b18" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a86d0956-e437-412e-b8e9-9b89d67ca741" name="CircleFilled" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4c481a58-03dc-418a-9206-dee6e7a0355b" />
+        <suppliersInternal>
+          <interfaceRealization Id="991d775f-1776-4f55-b6a7-4a30017737bf">
+            <interfaceMoniker Id="307cb47d-b8a9-45f8-a5a7-6cad0d14aefa" LastKnownName="ICircle" />
+            <elementDefinition Id="18427186-351c-497d-8f60-91d59c54a09f" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="724f72c4-9b20-4898-bc84-348c7558058b" name="CircleEmpty" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="47fbee7a-1676-4e0a-af27-081037a61e4d" />
+        <suppliersInternal>
+          <interfaceRealization Id="5026670b-75ed-4e3a-a3fb-2b571d70afb0">
+            <interfaceMoniker Id="307cb47d-b8a9-45f8-a5a7-6cad0d14aefa" LastKnownName="ICircle" />
+            <elementDefinition Id="5bae23cf-4021-4f00-86d7-41a28fa9655b" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="690ec693-3d16-4dcc-8669-7dbca39f1e9a" name="IGraphicObjectFactory" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d9ee134d-d762-4257-9134-1cca9867ebd5" />
+        <ownedOperations>
+          <operation Id="a56f682f-46f0-43a1-909c-55597b3372e1" name="CreateCircles" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce7a3f5f-f53b-4cc9-aad7-a04030b2a3c0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="29678140-3781-4b77-9ee8-efce48544e41" direction="Return" isUnique="false">
+                  <elementDefinition Id="21d0815b-c2a9-45f4-a4a8-4982f85416f0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="db791302-6001-4091-80ed-e697197b30e0" LastKnownName="list*&lt;ICircles*&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="251ec0ca-8373-4674-9636-ffd043b4604b" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="3201307a-5102-4551-8e44-bd3d64564319" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="70b5df35-cc7c-4a9b-bfa1-202779ff9d6d" name="CreateRectangles" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="36f0cf93-dafb-4257-a555-8f5d2f45cbcc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="911e22ec-e7e8-43cb-a6a0-fb3f705b75ad" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="cd53c01f-941f-4b2b-ac94-42e9b8da3a77" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="aace87eb-3ba0-4ea0-81fa-da318f5bae8d" direction="Return" isUnique="false">
+                  <elementDefinition Id="81083bd4-da76-4b54-abfc-8db13de60983" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e986208c-d085-44ec-a0bb-e1f65c5db935" LastKnownName="list*&lt;IRectangle*&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4d2c8f6e-f973-4616-afc6-3c261738c362" name="EmptyGraphicObjectFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7953bbf4-a016-4cbe-a275-3b517c0a64e7" />
+        <suppliersInternal>
+          <interfaceRealization Id="1330d4a2-999b-4889-a67a-ba9e6c22d32a">
+            <interfaceMoniker Id="690ec693-3d16-4dcc-8669-7dbca39f1e9a" LastKnownName="IGraphicObjectFactory" />
+            <elementDefinition Id="3e9cd40c-eb33-4dba-959b-68403219a5b8" />
+          </interfaceRealization>
+          <dependency Id="10d8f027-f102-4f73-9201-513ceb8e8f50">
+            <classMoniker Id="724f72c4-9b20-4898-bc84-348c7558058b" LastKnownName="CircleEmpty" />
+            <elementDefinition Id="d837690c-4e51-4f57-8ded-4376c3f1bc97" />
+          </dependency>
+          <dependency Id="0475b899-812b-4b1a-80ee-fc1d5d8966e6">
+            <classMoniker Id="f7ffb97c-bf48-4fef-8d0a-503e5da8cf11" LastKnownName="RectangleEmpty" />
+            <elementDefinition Id="2b1cad2c-e73c-454e-8b0c-0ba8e5a22ce5" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="46e1f905-e487-4b28-95ab-ecb177afb78c" isSubstitutable="false">
+            <classMoniker Id="eac2baa5-c7f0-4256-a804-9bda7d8d735a" LastKnownName="SingletonBase" />
+            <elementDefinition Id="02111e6a-ed25-4630-a218-0a278edc05b8" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="72ea3da4-db2d-4881-bad2-cea10d95b862" name="CreateCircles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="02a5a627-dffa-41cb-baf0-e4ca0d7fca58" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d91326a-f3b7-48f8-a1f6-71a56bdafb8a" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="fab653bb-210b-4357-a943-22f2fd0acfe7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c8182bc2-5a74-4d91-a38f-c9adc5c4f507" direction="Return" isUnique="false">
+                  <elementDefinition Id="aaf7c2a2-7979-4954-a93b-66c62f59d8cd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="db791302-6001-4091-80ed-e697197b30e0" LastKnownName="list*&lt;ICircles*&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="63f89d95-823a-4ce6-b444-c1a0f0cec000" name="CreateRectangles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a711741-487f-483c-8e37-00186d5f0958" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9dd8e474-d43d-4b08-a276-acdbbcf5b656" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="36b4eaa5-7a20-4b06-9d3d-962994fc9285" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2a9ebfe1-3a71-4c7d-b7b4-6f8f8a86e73a" direction="Return" isUnique="false">
+                  <elementDefinition Id="3c9652bd-6c1b-450f-b654-3718c2600842" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e986208c-d085-44ec-a0bb-e1f65c5db935" LastKnownName="list*&lt;IRectangle*&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2cdec59e-2ad5-4a63-94cf-456b38cb6e20" name="FilledGraphicObjectFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="401f03d3-3815-46a3-9bfd-32a3002d7f55" />
+        <suppliersInternal>
+          <interfaceRealization Id="8b257731-df3f-4ba8-94ce-009f3c7bbce3">
+            <interfaceMoniker Id="690ec693-3d16-4dcc-8669-7dbca39f1e9a" LastKnownName="IGraphicObjectFactory" />
+            <elementDefinition Id="a898ccf5-ea40-4d0f-9784-aa689ab532ec" />
+          </interfaceRealization>
+          <dependency Id="4daf9335-aa7a-48ab-946f-660c3079fb78">
+            <classMoniker Id="b70f2487-4e41-4b4f-ae15-d55f1ade1620" LastKnownName="RectangleFilled" />
+            <elementDefinition Id="03a94cde-bfac-40d8-ae89-9463574ce066" />
+          </dependency>
+          <dependency Id="3c067d55-dd95-427b-9cd9-616743ebc706">
+            <classMoniker Id="a86d0956-e437-412e-b8e9-9b89d67ca741" LastKnownName="CircleFilled" />
+            <elementDefinition Id="0f88ddc1-99d2-4dd9-8a4f-29acd21e9d8d" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="41216dc5-f2b3-4391-b827-4527ad33fdec" isSubstitutable="false">
+            <classMoniker Id="eac2baa5-c7f0-4256-a804-9bda7d8d735a" LastKnownName="SingletonBase" />
+            <elementDefinition Id="776d99dd-ca84-4a3b-b7fa-cdb31c09a2c1" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="c087dc05-a812-402d-8c54-73493bbe28d1" name="CreateCircles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6248205c-ddb5-4f6f-9f5a-80d9dc8bfac4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0cf7bd2e-9ca8-4aeb-9355-a658383611c1" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="fc32e310-9835-47a2-8135-e39a014ecc48" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="369009e2-b75d-4322-b2b1-bdc11d7ab41a" direction="Return" isUnique="false">
+                  <elementDefinition Id="7f5a0885-e4bf-4695-a02c-bbae3bfa6b21" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="db791302-6001-4091-80ed-e697197b30e0" LastKnownName="list*&lt;ICircles*&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4fc72169-95bf-40cc-90a1-0a38a93de0b4" name="CreateRectangles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8472658b-a96a-481c-a4d8-6bc01828bb81" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="46e5ab1f-bdb2-4b0d-b439-d899b3fa52d1" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="4a531892-55bb-4da9-8abe-0a55412e123f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fd6375d5-7c62-4fbc-a331-98e74b9a1df8" direction="Return" isUnique="false">
+                  <elementDefinition Id="b452555c-7858-4eac-9401-72d28eb82277" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e986208c-d085-44ec-a0bb-e1f65c5db935" LastKnownName="list*&lt;IRectangle*&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eac2baa5-c7f0-4256-a804-9bda7d8d735a" name="SingletonBase" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="684ccb7c-7d2e-4cc1-8321-9d4066ce949f" />
+        <generalsInternal>
+          <generalization Id="d4ec71f7-9ce4-43d6-a9dd-fab1391daf40" isSubstitutable="false">
+            <classMoniker Id="ad539174-8cf2-48ec-ac95-8c511aae4b06" LastKnownName="Object" />
+            <elementDefinition Id="0cc391c5-35cf-4056-b681-5b22d4fe0be0" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="68cc06ac-0c41-4400-8970-bf9250228279" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c16d0353-91cb-4181-a4bd-c7cf806a398e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bfe502f9-0a4b-498d-8487-cd7108b08484" name="list&lt;Image*&gt;" isAbstract="false" isLeaf="false" cachedFullName="list&lt;Image*&gt;">
+        <elementDefinition Id="ea964f5e-f5be-4783-b9d5-74d095b08bb8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cbd329b1-39ab-4e09-8249-221143894282" name="IGraphicObjectFactory*" isAbstract="false" isLeaf="false" cachedFullName="IGraphicObjectFactory*">
+        <elementDefinition Id="bd62d052-cd91-466d-88bc-ff49eb8ce6ed" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="40f6de35-45f4-4796-be26-020e1643c065" name="list*&lt;ICircle*&gt;" isAbstract="false" isLeaf="false" cachedFullName="list*&lt;ICircle*&gt;">
+        <elementDefinition Id="c470813a-d1c2-4055-a0de-d0c1828886e3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e986208c-d085-44ec-a0bb-e1f65c5db935" name="list*&lt;IRectangle*&gt;" isAbstract="false" isLeaf="false" cachedFullName="list*&lt;IRectangle*&gt;">
+        <elementDefinition Id="ada531d0-5bbf-4b7c-9508-d0cd29cae22d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="db791302-6001-4091-80ed-e697197b30e0" name="list*&lt;ICircles*&gt;" isAbstract="false" isLeaf="false" cachedFullName="list*&lt;ICircles*&gt;">
+        <elementDefinition Id="33e3d5a4-8300-4b52-aead-fd8f2fc824df" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="37f8238b-be31-45c8-bb36-57b5d3d06e09" name="Classdiagram">
+    <elementDefinition Id="54cfda78-043d-498f-9df4-09968fefefa1" />
+  </package>
+</logicalClassDesignerModel>

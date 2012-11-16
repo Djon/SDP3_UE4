@@ -5,17 +5,36 @@
   name="Classdiagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="2a7142c1-ce6a-4966-8c1e-25446fb48eeb">
-      <body>graphic object
-abstract class??</body>
+      Id="c76e476a-d73e-428c-ba57-794cdd517fe0">
+      <body>&lt;&lt;creates&gt;&gt;</body>
     </comment>
     <comment
-      Id="d06c4814-0757-4f0f-b549-cde81a6bdd25">
-      <body>einzelne objekte zruckgeben</body>
+      Id="3d6e89ac-80cd-47cf-b81a-5c1e67bc0090">
+      <body>&lt;&lt;creates&gt;&gt;</body>
     </comment>
     <comment
-      Id="c3d2ec2a-b149-4fd1-acf4-590b41541897">
-      <body>irgendwo da dateien einlesen, wahrscheinlich im image</body>
+      Id="bc51dc9a-237b-4a9a-80e3-b5bce9aac314">
+      <body>&lt;&lt;creates&gt;&gt;</body>
+    </comment>
+    <comment
+      Id="b9aea028-946a-4c3b-a2a8-3d1f0e3cd731">
+      <body>&lt;&lt;creates&gt;&gt;</body>
+    </comment>
+    <comment
+      Id="8c466da0-94f9-4172-aed9-2d8de8120457">
+      <body>&lt;&lt;use&gt;&gt;</body>
+    </comment>
+    <comment
+      Id="bd9a4e4b-bf0a-4bef-828d-204dbfd5cc60">
+      <body>&lt;&lt;friend&gt;&gt;</body>
+    </comment>
+    <comment
+      Id="1fd920ab-f894-4e48-928f-d5f050757089">
+      <body>&lt;&lt;friend&gt;&gt;</body>
+    </comment>
+    <comment
+      Id="09a28da1-1df4-4ea5-9e8f-5770cd7b1500">
+      <body>&lt;&lt;friend&gt;&gt;</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -236,6 +255,56 @@ abstract class??</body>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="bcef0e1b-6967-4785-b1bb-8bd3e875c2aa"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="84f3c623-1494-480d-b5eb-584b2781bfcc"
+              LastKnownName="GraphicObject"
+              LastKnownLocation="Classdiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d2417ff6-f890-4848-a9c5-2309e26e7be2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="72b2b2c3-a884-4f02-8d1f-43198990eeb6"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7bc55a47-ad0c-4213-9f91-cb5ea00cd9ac"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1530ef5b-6fba-4174-acc9-bbd6457e8017"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -258,8 +327,9 @@ abstract class??</body>
             </type_NamedElement>
           </property>
           <property
-            Id="4440e976-2a22-4a08-98e5-1168c13d6148"
-            name="mCircles"
+            Id="df19463e-4a3e-4c28-be01-0f1156f9bae0"
+            name="mGraphicObjects"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -270,14 +340,15 @@ abstract class??</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="c470813a-d1c2-4055-a0de-d0c1828886e3"
-                LastKnownName="list*&lt;ICircle*&gt;"
+                Id="c175f0c7-396c-43ff-99b3-b3acca4fada0"
+                LastKnownName="list &lt;GraphicObject*&gt;"
                 LastKnownLocation="Classdiagram.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="33dc2066-6b79-4d26-8444-5998c88f3b28"
-            name="mRectangles"
+            Id="0bd483cc-d5ad-4bac-a8b5-0c99346b03b3"
+            name="mFilenameSVG"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -288,38 +359,13 @@ abstract class??</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="ada531d0-5bbf-4b7c-9508-d0cd29cae22d"
-                LastKnownName="list*&lt;IRectangle*&gt;"
+                Id="03251cea-8d2b-43ed-bdd6-88127c419f5c"
+                LastKnownName="string"
                 LastKnownLocation="Classdiagram.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="5ffaae11-7414-44a9-ae86-188e4dd33a87"
-            name="AddGraphicObjects"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ee35f69d-13e2-41c0-8baa-32365158826e"
-                  name="string const&amp;"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b05f668e-ebd1-4f64-8496-a52d0a6dfecc"
-                  name="string const&amp;"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
           <operation
             Id="7b7c9ecd-c966-4409-9b91-8d50a0d92218"
             name="Image"
@@ -345,6 +391,68 @@ abstract class??</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="e5765890-3b3e-4c8a-8e68-8a554c09b597"
+            name="WriteSVG"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ba0c1db-e435-42b7-878b-fa4f7b9530c2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0c1469f9-b5dc-4f1b-a79c-64b514fcd44c"
+            name="ReadData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c7e71db0-bdcd-4a1a-a3d5-fdf4977461e6"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb9e224f-d1b4-4e4f-81a5-a71e815223b2"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b66a1a0-15a5-485f-b111-289a8f1c17a3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -364,7 +472,7 @@ abstract class??</body>
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="ad3583db-e23c-4d47-bc4b-b500097af0ee"
+            Id="702bb162-afbe-4bde-98d4-d2ec11178b7c"
             isSubstitutable="false">
             <classMoniker
               Id="684ccb7c-7d2e-4cc1-8321-9d4066ce949f"
@@ -498,6 +606,15 @@ abstract class??</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="6395d350-c2bc-4246-866a-8895a5a70406"
+            name="ImageManagement"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -506,7 +623,46 @@ abstract class??</body>
         Id="a6b9f983-f707-4888-8a67-a827450e59a2"
         name="IRectangle"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="173ab1b0-612d-47ed-a406-34e4bccf40d0"
+            name="mWidth"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dd32c40e-2438-4454-a538-eeb4f57a7ad2"
+            name="mHeight"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -517,13 +673,49 @@ abstract class??</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="10dd5ee4-8b7b-4110-85ab-84ca9d834c65">
+            Id="563702e7-0d48-4449-a352-97abd0069439">
             <interfaceMoniker
               Id="a6b9f983-f707-4888-8a67-a827450e59a2"
               LastKnownName="IRectangle"
               LastKnownLocation="Classdiagram.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="27667296-1839-4ab7-81c2-dbe0573c283b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c00f19e9-ec88-46b0-a413-ecf94ae5f630"
+              LastKnownName="Rectangle"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="63091ae2-f89f-40fd-9fcd-4abed2b1706f"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b67baddf-0395-46f4-a09b-61e9733e48dc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -535,13 +727,49 @@ abstract class??</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="60540d54-4219-4199-862f-a1f1f92ff71c">
+            Id="fd2befbe-5535-4ba0-ba36-2e144e0ec547">
             <interfaceMoniker
               Id="a6b9f983-f707-4888-8a67-a827450e59a2"
               LastKnownName="IRectangle"
               LastKnownLocation="Classdiagram.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="85a8cd63-6df3-4dc0-baaf-829b0ee0b0d9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c00f19e9-ec88-46b0-a413-ecf94ae5f630"
+              LastKnownName="Rectangle"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8e8d270a-3e7e-4dc7-8998-d988db1a6e18"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a7953cef-e3bb-49dd-97d7-0c343d53f7c0"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -560,13 +788,49 @@ abstract class??</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="18427186-351c-497d-8f60-91d59c54a09f">
+            Id="804cacd6-8429-421c-b06f-70809d365dac">
             <interfaceMoniker
               Id="5e961f41-cfcd-4b27-9c75-d3c517794b18"
               LastKnownName="ICircle"
               LastKnownLocation="Classdiagram.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="7ffa390b-f764-445a-8987-a4de6f54f788"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b782a3a4-1c15-4b73-8c8f-c4666f5c20d1"
+              LastKnownName="Circle"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="748f6316-6b69-484e-8f9f-3c22af92ad16"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b5156bd-8525-4b84-9e29-d3d78189b86a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -578,13 +842,49 @@ abstract class??</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="5bae23cf-4021-4f00-86d7-41a28fa9655b">
+            Id="aed230b8-62b0-4c2d-9246-bb7f53e636cc">
             <interfaceMoniker
               Id="5e961f41-cfcd-4b27-9c75-d3c517794b18"
               LastKnownName="ICircle"
               LastKnownLocation="Classdiagram.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="cf335150-95a8-492d-8b0e-23ae0d7fdcea"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b782a3a4-1c15-4b73-8c8f-c4666f5c20d1"
+              LastKnownName="Circle"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="272eb091-bc38-4321-a8e2-1d2de8f5d5cd"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="68578425-f27c-4358-ad7b-e9b85360a25d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -593,10 +893,19 @@ abstract class??</body>
         name="IGraphicObjectFactory"
         isAbstract="false"
         isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="f2c421af-b843-4f38-8a52-4096632ccaf8">
+            <classMoniker
+              Id="84f3c623-1494-480d-b5eb-584b2781bfcc"
+              LastKnownName="GraphicObject"
+              LastKnownLocation="Classdiagram.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperations>
           <operation
             Id="ce7a3f5f-f53b-4cc9-aad7-a04030b2a3c0"
-            name="CreateCircles"
+            name="CreateCircle"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -610,16 +919,23 @@ abstract class??</body>
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="33e3d5a4-8300-4b52-aead-fd8f2fc824df"
-                      LastKnownName="list*&lt;ICircles*&gt;"
+                      Id="85355421-b6b4-44b2-8cba-a3089500412c"
+                      LastKnownName="Circle*"
                       LastKnownLocation="Classdiagram.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="3201307a-5102-4551-8e44-bd3d64564319"
-                  name="string const&amp;"
+                  Id="1e8fad5b-a508-44bc-8d75-cff70f1350e3"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b446887a-1378-40d3-9e83-13bb161b2dad"
+                  name="size_t"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -627,7 +943,7 @@ abstract class??</body>
           </operation>
           <operation
             Id="36f0cf93-dafb-4257-a555-8f5d2f45cbcc"
-            name="CreateRectangles"
+            name="CreateRectangle"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -636,23 +952,30 @@ abstract class??</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="cd53c01f-941f-4b2b-ac94-42e9b8da3a77"
-                  name="string const&amp;"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
                   Id="81083bd4-da76-4b54-abfc-8db13de60983"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="ada531d0-5bbf-4b7c-9508-d0cd29cae22d"
-                      LastKnownName="list*&lt;IRectangle*&gt;"
+                      Id="96ac4549-0e21-4f1d-be82-b240e7267ed8"
+                      LastKnownName="Rectangle*"
                       LastKnownLocation="Classdiagram.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="662e0e0e-1103-4325-8f5a-30cb044bf811"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e83c159d-44a3-4d9d-8ff4-8c648fd2c0cc"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -691,7 +1014,7 @@ abstract class??</body>
         </suppliersInternal>
         <generalsInternal>
           <generalization
-            Id="02111e6a-ed25-4630-a218-0a278edc05b8"
+            Id="d4b313a2-b888-41bd-b782-9c3daf066b52"
             isSubstitutable="false">
             <classMoniker
               Id="684ccb7c-7d2e-4cc1-8321-9d4066ce949f"
@@ -702,7 +1025,7 @@ abstract class??</body>
         <ownedOperationsInternal>
           <operation
             Id="02a5a627-dffa-41cb-baf0-e4ca0d7fca58"
-            name="CreateCircles"
+            name="CreateCircle"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -723,17 +1046,24 @@ abstract class??</body>
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="33e3d5a4-8300-4b52-aead-fd8f2fc824df"
-                      LastKnownName="list*&lt;ICircles*&gt;"
+                      Id="85355421-b6b4-44b2-8cba-a3089500412c"
+                      LastKnownName="Circle*"
                       LastKnownLocation="Classdiagram.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="874a7028-0f73-4b55-b1f0-ff2b3d9bf780"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
             Id="3a711741-487f-483c-8e37-00186d5f0958"
-            name="CreateRectangles"
+            name="CreateRectangle"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -754,14 +1084,30 @@ abstract class??</body>
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="ada531d0-5bbf-4b7c-9508-d0cd29cae22d"
-                      LastKnownName="list*&lt;IRectangle*&gt;"
+                      Id="96ac4549-0e21-4f1d-be82-b240e7267ed8"
+                      LastKnownName="Rectangle*"
                       LastKnownLocation="Classdiagram.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="28459489-44e3-4026-8859-763492ec7dc4"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="afe1ff7e-66e7-49e1-9524-5688dac08d90"
+            name="EmptyGraphicObjectFactory"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -797,7 +1143,7 @@ abstract class??</body>
         </suppliersInternal>
         <generalsInternal>
           <generalization
-            Id="776d99dd-ca84-4a3b-b7fa-cdb31c09a2c1"
+            Id="bc24364c-58a8-41c1-9c8b-13a4eb498cb7"
             isSubstitutable="false">
             <classMoniker
               Id="684ccb7c-7d2e-4cc1-8321-9d4066ce949f"
@@ -808,7 +1154,7 @@ abstract class??</body>
         <ownedOperationsInternal>
           <operation
             Id="6248205c-ddb5-4f6f-9f5a-80d9dc8bfac4"
-            name="CreateCircles"
+            name="CreateCircle"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -829,17 +1175,24 @@ abstract class??</body>
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="33e3d5a4-8300-4b52-aead-fd8f2fc824df"
-                      LastKnownName="list*&lt;ICircles*&gt;"
+                      Id="85355421-b6b4-44b2-8cba-a3089500412c"
+                      LastKnownName="Circle*"
                       LastKnownLocation="Classdiagram.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8c9f8112-ef41-4bb9-b938-647a8d886a82"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
             Id="8472658b-a96a-481c-a4d8-6bc01828bb81"
-            name="CreateRectangles"
+            name="CreateRectangle"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -860,14 +1213,30 @@ abstract class??</body>
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="ada531d0-5bbf-4b7c-9508-d0cd29cae22d"
-                      LastKnownName="list*&lt;IRectangle*&gt;"
+                      Id="96ac4549-0e21-4f1d-be82-b240e7267ed8"
+                      LastKnownName="Rectangle*"
                       LastKnownLocation="Classdiagram.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2afbd686-4ac1-421d-8786-b7dd65221b5d"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="38d4fe29-6cde-4dfe-a964-34940b8ff772"
+            name="FilledGraphicObjectFactory"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -888,6 +1257,106 @@ abstract class??</body>
               LastKnownLocation="Classdiagram.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="2d6acea9-f3b0-4706-9b0c-6726008860fe"
+            name="mSingletonBase*"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="77b525f9-83f3-4eca-ac7d-1690bfa5111d"
+            name="GetInstance"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dcbbf377-1dee-4857-9ccf-0e417bcb759a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="009af93d-01d5-4798-a8df-529b759ee828"
+                      LastKnownName="SingletonBase&amp;"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="25f84366-b997-4ff8-bd96-2fd92f241fff"
+            name="SingletonBase"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c6b42a9d-5471-4c86-a0db-eeeaddcaa9cb"
+            name="SingletonBase"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4c75ad65-490b-483b-bef0-4500d67f86af"
+                  name="SingletonBase const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="86dedbef-913d-4cb4-aa5a-e6c5432d1f21"
+            name="operator="
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cbe46815-bcfb-4124-b4fd-85ef90152338"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ad921d28-e675-4f93-9fbd-451f33634eb1"
+                      LastKnownName="Singleton&amp;"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e707554b-d197-410c-9120-7232a3c54c84"
+                  name="Singleton const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1066,6 +1535,405 @@ abstract class??</body>
       <undefinedType
         Id="33e3d5a4-8300-4b52-aead-fd8f2fc824df"
         name="list*&lt;ICircles*&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="84f3c623-1494-480d-b5eb-584b2781bfcc"
+        name="GraphicObject"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="f248a6dd-34e6-42e8-bb73-1f4c03a01afb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4885bdcd-414c-4ca3-b979-09e8bf070d5e"
+              LastKnownName="Object"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b0324725-1301-45c7-a4de-7fa21f65e141"
+            name="mPosX"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="da746781-9ca0-4c07-847a-b1348add13ca"
+            name="mPosY"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="241050fc-558a-4681-b60b-1610a80e78b6"
+            name="mStroke"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="03251cea-8d2b-43ed-bdd6-88127c419f5c"
+                LastKnownName="string"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bd8e0841-6d84-4a9e-9bb2-937c24c7b7d0"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="58498ee1-d4c1-44a1-8e34-509cd59a01d8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="983cab56-d245-4f69-8220-e4f423a2c380"
+            name="GraphicObject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6fcf6ba1-a256-48bc-bba5-68355a472897"
+                  name="GraphicObject const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f68030f8-54eb-4ece-895f-ed11e67d0d90"
+            name="operator="
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b886ac4d-33a0-4602-971d-8e381a466cfd"
+                  name="GraphicObject const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d705b594-2792-4dde-8e92-0f0e169cfb8f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4382be6b-f397-4aea-94a1-cfd3281f167d"
+                      LastKnownName="GraphicObject&amp;"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="be7e3d40-679a-49fc-b6ea-2035c0ac99e4"
+        name="ICircle*" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6e389298-b7d6-455d-81a5-d996d1360a29"
+        name="IRectangle*" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="bc856756-891a-45b3-b842-a296461a54b2"
+        name="void = 0" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+        name="size_t" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bece169d-4487-4775-8610-1ee8aa05ebdd"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="fdb111c3-c42f-4c4e-863a-822abbcf6d01">
+            <interfaceMoniker
+              Id="a6b9f983-f707-4888-8a67-a827450e59a2"
+              LastKnownName="IRectangle"
+              LastKnownLocation="Classdiagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c00f19e9-ec88-46b0-a413-ecf94ae5f630"
+        name="Rectangle"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="851f4b59-2b2a-4b58-b9c7-c0e15f947dbe"
+            isSubstitutable="false">
+            <classMoniker
+              Id="84f3c623-1494-480d-b5eb-584b2781bfcc"
+              LastKnownName="GraphicObject"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="376ad3de-1316-422d-a11d-886f400b286b"
+            name="mHeight"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3eaa463a-770c-49b6-851c-c92e2d727cd7"
+            name="mWidth"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e853a180-ed84-4a15-9bbc-67d774eba4e0"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b67438d1-d0f7-464d-8040-1a425c1c3b2c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b782a3a4-1c15-4b73-8c8f-c4666f5c20d1"
+        name="Circle"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="71f86093-07d8-46c5-9a95-8d46cb0d170b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="84f3c623-1494-480d-b5eb-584b2781bfcc"
+              LastKnownName="GraphicObject"
+              LastKnownLocation="Classdiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="f2a127c3-0918-4213-b0b5-709ee59c1a41"
+            name="mRadius"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15814735-468e-4e70-8a91-bd8bfc4bfc27"
+                LastKnownName="size_t"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="675258e2-02bf-4d3a-8693-2584354794ba"
+            name="Write"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1ceb6847-2ab3-441b-a153-ed99ca86b42d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="03251cea-8d2b-43ed-bdd6-88127c419f5c"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="11b9ddab-5879-4579-8cd1-2f6961864239"
+        name="ovid" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="85355421-b6b4-44b2-8cba-a3089500412c"
+        name="Circle*" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="96ac4549-0e21-4f1d-be82-b240e7267ed8"
+        name="Rectangle*" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="78878549-7a85-4694-8e0f-73ae6fc7bb2a"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d39b5a74-18ab-40c1-a9e0-10bd003251f6"
+        name="Singleton*" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ad921d28-e675-4f93-9fbd-451f33634eb1"
+        name="Singleton&amp;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7894c46f-7436-465b-ac27-b1c0d235dbf7"
+        name="T_DERIVED&amp;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="009af93d-01d5-4798-a8df-529b759ee828"
+        name="SingletonBase&amp;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c175f0c7-396c-43ff-99b3-b3acca4fada0"
+        name="list &lt;GraphicObject*&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4382be6b-f397-4aea-94a1-cfd3281f167d"
+        name="GraphicObject&amp;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

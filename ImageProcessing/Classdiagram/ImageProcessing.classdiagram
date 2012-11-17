@@ -681,6 +681,12 @@
               <referencedTypeMoniker Id="035dd098-1bda-4d59-acc8-ba0d60d2d72e" LastKnownName="string" />
             </type_NamedElement>
           </property>
+          <property Id="f25abfe6-a5ec-4b0e-a725-5624aafa7248" name="mFill" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9983a7e4-edb9-4cd7-b012-43c880c72a65" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="035dd098-1bda-4d59-acc8-ba0d60d2d72e" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="88021ee4-1b50-421d-8bf8-4a989c937b43" name="Write" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">

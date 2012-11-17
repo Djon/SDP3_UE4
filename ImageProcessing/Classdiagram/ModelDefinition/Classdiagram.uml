@@ -1611,6 +1611,25 @@
                 LastKnownLocation="Classdiagram.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="9983a7e4-edb9-4cd7-b012-43c880c72a65"
+            name="mFill"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="03251cea-8d2b-43ed-bdd6-88127c419f5c"
+                LastKnownName="string"
+                LastKnownLocation="Classdiagram.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation

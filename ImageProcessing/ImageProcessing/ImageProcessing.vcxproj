@@ -74,6 +74,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="CircleEmpty.cpp" />
+    <ClCompile Include="CircleFilled.cpp" />
+    <ClCompile Include="EmptyGraphicObjectFactory.cpp" />
+    <ClCompile Include="FilledGraphicObjectFactory.cpp" />
+    <ClCompile Include="GraphicObject.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="ImageManagment.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RectangleEmpty.cpp" />
+    <ClCompile Include="RectangleFilled.cpp" />
+    <ClCompile Include="SingletonBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="CircleEmpty.h" />
+    <ClInclude Include="CircleFilled.h" />
+    <ClInclude Include="EmptyGraphicObjectFactory.h" />
+    <ClInclude Include="FilledGraphicObjectFactory.h" />
+    <ClInclude Include="GraphicObject.h" />
+    <ClInclude Include="IGraphicObjectFactory.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="ImageManagment.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RectangleEmpty.h" />
+    <ClInclude Include="RectangleFilled.h" />
+    <ClInclude Include="SingletonBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

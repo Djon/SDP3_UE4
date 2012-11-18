@@ -18,16 +18,18 @@ class ImageManagment
 {
 	friend class SingletonBase<ImageManagment>;
 public:
-	//Default CTor
-	ImageManagment();
-
 	//virtual Destructor
-	virtual ~Image();
+	virtual ~ImageManagment();
 
-	void AddImage(string const& filename1, string const& filename2, 
-		string const& SVGFileName, IGraphicobjectFactory* factory);
+	void AddImage(std::string const& filename1, std::string const& filename2, 
+		std::string const& SVGFileName, IGraphicObjectFactory* factory);
+
+	void WriteSVG();
 private:
 	std::list<Image*> mImageList;
+
+	//Default CTor
+	ImageManagment();
 };
 
 #endif

@@ -9,6 +9,7 @@
 #define RECTANGLE_H
 
 #include <string>
+#include <fstream>
 #include "GraphicObject.h"
 
 std::string const begin = "<";
@@ -33,7 +34,7 @@ public:
 	//virtual Destructor
 	virtual ~Rectangle();
 
-	virtual void Write(std::string const& filename);
+	virtual void Write(std::ofstream& stream);
 protected:
 	size_t mHeight;
 	size_t mWidth;

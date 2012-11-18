@@ -2,23 +2,21 @@
 #include <iostream>
 #include "Rectangle.h"
 
-void Rectangle::Write(std::string const& filename)
+void Rectangle::Write(std::ofstream& stream)
 {
 	try {
-		std::ofstream file(filename);
-		if (!file.is_open())
+		if (!stream.is_open())
 		{
-			std::string ex("File couldn't be opened");
+			std::string ex("Stream couldn't be opened");
 			throw(ex);
 		}
 
-		file << begin << space 
+		stream << begin << space 
 			   << x << qM << mPosX << qM << space
 			   << y << qM << mPosY << qM << space
 			   << width << qM << mWidth << qM << space
 			   << height << qM << mHeight << qM << space
 			   << stroke << qM << mStroke << qM;
-		file.close();	
 	}
 	catch(std::string const& ex)
 	{

@@ -20,21 +20,13 @@ void Image::WriteSVG()
 		}
 
 		file << version << std::endl << link << std::endl;
-		file.close();
 
-		//achtung: file wird da wieder geöffnet
 		TGraphicObjectsItor itor = mGraphicObjects.begin();
 		for(;itor != mGraphicObjects.end(); ++itor)
 		{
-			(*itor)->Write(mFileNameSVG);
+			(*itor)->Write(file);
 		}
 
-		file.open(mFileNameSVG);
-		if (!file.is_open())
-		{
-			std::string ex("File couldn't be opened");
-			throw(ex);
-		}
 		file << endSVG;
 		file.close();
 	}

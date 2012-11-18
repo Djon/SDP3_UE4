@@ -12,20 +12,17 @@ RectangleFilled::RectangleFilled(size_t const& posX, size_t const& posY, size_t 
 	mFill = fill;
 }
 
-void RectangleFilled::Write(std::string const& filename)
+void RectangleFilled::Write(std::ofstream& stream)
 {
 	try {
-		Rectangle::Write(filename);
-		
-		std::ofstream file(filename);
-		if (!file.is_open())
+		Rectangle::Write(stream);
+		if (!stream.is_open())
 		{
 			std::string ex("File couldn't be opened");
 			throw(ex);
 		}
-		file << space << fill << qM << mFill << qM;
-		file << end << std::endl;
-		file.close();		
+		stream << space << fill << qM << mFill << qM << end << std::endl;
+		stream.close();		
 	}
 	catch(std::string const& ex)
 	{

@@ -9,6 +9,7 @@
 #define RECTANGLEFILLED_H
 
 #include <string>
+#include <fstream>
 #include "Rectangle.h"
 
 class RectangleFilled
@@ -20,7 +21,7 @@ public:
 	//virtual Destructor
 	~RectangleFilled();
 
-	void Write(std::string const& filename);
+	void Write(std::ofstream& stream);
 };
 
 #endif

@@ -9,6 +9,7 @@
 #define GRAPHICOBJECT_H
 
 #include <string>
+#include <fstream>
 #include "Object.h"
 
 class GraphicObject 
@@ -21,7 +22,7 @@ public:
 	//virtual Destructor
 	virtual ~GraphicObject();
 
-	virtual std::string Write(std::string filename);
+	virtual void Write(std::ofstream& stream);
 protected:
 	std::string mFill;
 	std::string mStroke;

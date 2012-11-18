@@ -1,21 +1,36 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : GraphicObject.h
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Header for Object.cpp
+// Date : 18.11.2012
+// Description : Header for GraphicObject.cpp
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef GRAPHICOBJECT_H
+#define GRAPHICOBJECT_H
 
-class Object
+#include <string>
+#include "Object.h"
+
+class GraphicObject 
+	: public Object
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	//Default CTor
+	GraphicObject();
+
+	//virtual Destructor
+	virtual ~GraphicObject();
+
+	virtual void Write();
+private:
+	string mFill;
+	string mStroke;
+	size_t nPosX;
+	size_t nPosY;
+
+
+	GraphicObject(GraphicObject const& s);
+	GraphicObject& operator = (GraphicObject const& s);
 };
 
 #endif

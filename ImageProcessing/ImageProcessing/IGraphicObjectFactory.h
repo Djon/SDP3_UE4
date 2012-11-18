@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : IGraphicObjectFactory.h
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Header for Object.cpp
+// Date : 18.11.2012
+// Description : GraphicObjectFactory interface
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef IGRAPHICOBJECTFACTORY_H
+#define IGRAPHICOBJECTFACTORY_H
 
-class Object
+#include "Circle.h"
+#include "Rectangle.h"
+
+class IGraphicObjectFactory
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	virtual Circle* CreateCircle(/*ToDo: Paramaters*/);
+	virtual Rectangle* CreateRectangel(/*ToDo: Paramaters*/);
 };
 
 #endif

@@ -1,21 +1,28 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : FilledGraphicObjectFactory.h
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Header for Object.cpp
+// Date : 18.11.2012
+// Description : Header for FilledGraphicObjectFactory.cpp
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef FILLEDGRAPHICOBJECTFACTORY_H
+#define FILLEDGRAPHICOBJECTFACTORY_H
 
-class Object
+#include "Circle.h"
+#include "Rectangle.h"
+#include "SingletonBase.h"
+#include "IGraphicObjectFactory.h"
+
+class FilledGraphicObjectFactory :
+	public SingletonBase<FilledGraphicObjectFactory>,
+	public IGraphicObjectFactory
 {
+	friend class SingletonBase<FilledGraphicObjectFactory>;
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	virtual Circle* CreateCircle(/*ToDo: Paramaters*/);
+	virtual Rectangle* CreateRectangel(/*ToDo: Paramaters*/);
+private:
+	FilledGraphicObjectFactory();
 };
 
 #endif

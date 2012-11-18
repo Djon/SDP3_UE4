@@ -86,7 +86,6 @@
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RectangleEmpty.cpp" />
     <ClCompile Include="RectangleFilled.cpp" />
-    <ClCompile Include="SingletonBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />

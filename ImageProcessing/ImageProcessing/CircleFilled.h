@@ -16,7 +16,7 @@ class CircleFilled
 {
 public:
 	//Default CTor
-	CircleFilled();
+	CircleFilled(size_t const& posX, size_t const& posY, size_t const& radius, std::string const& stroke, std::string const& fill);
 
 	//virtual Destructor
 	virtual ~CircleFilled();

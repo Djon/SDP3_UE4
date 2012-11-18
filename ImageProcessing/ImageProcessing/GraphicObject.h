@@ -16,14 +16,14 @@ class GraphicObject
 {
 public:
 	//Default CTor
-	//GraphicObject();
+	GraphicObject();
 
 	//virtual Destructor
 	virtual ~GraphicObject();
 
-	virtual std::string Write(std::string filename) = 0;
+	virtual std::string Write(std::string filename);
 protected:
-	std::string mFill;	// = "unspecified" when not specified
+	std::string mFill;
 	std::string mStroke;
 	size_t mPosX;
 	size_t mPosY;

@@ -20,7 +20,7 @@ class EmptyGraphicObjectFactory :
 	friend class SingletonBase<EmptyGraphicObjectFactory>;
 public:
 	virtual Circle* CreateCircle(/*ToDo: Paramaters*/);
-	virtual Rectangle* CreateRectangel(/*ToDo: Paramaters*/);
+	virtual Rectangle* CreateRectangle(/*ToDo: Paramaters*/);
 private:
 	EmptyGraphicObjectFactory();
 };

@@ -15,13 +15,12 @@ class RectangleFilled
 	: public Rectangle
 {
 public:
-	//Default CTor
 	RectangleFilled(size_t const& posX, size_t const& posY, size_t const& height, size_t const& width, std::string const& stroke, std::string const& fill);
 
 	//virtual Destructor
 	~RectangleFilled();
 
-	void Write();
+	void Write(std::string const& filename);
 };
 
 #endif

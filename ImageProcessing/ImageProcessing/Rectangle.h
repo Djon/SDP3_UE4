@@ -34,7 +34,7 @@ public:
 	virtual ~Rectangle();
 
 	virtual void Write(std::string const& filename);
-private:
+protected:
 	size_t mHeight;
 	size_t mWidth;
 };

@@ -22,7 +22,7 @@ public:
 	virtual ~Circle();
 
 	virtual void Write();
-private:
+protected:
 	size_t mRadius;
 };
 

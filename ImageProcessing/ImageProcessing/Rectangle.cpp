@@ -8,7 +8,7 @@ void Rectangle::Write(std::string const& filename)
 		std::ofstream file(filename);
 		if (!file.is_open())
 		{
-			std::string ex("Stream couldn't be opened");
+			std::string ex("File couldn't be opened");
 			throw(ex);
 		}
 
@@ -18,15 +18,7 @@ void Rectangle::Write(std::string const& filename)
 			   << width << qM << mWidth << qM << space
 			   << height << qM << mHeight << qM << space
 			   << stroke << qM << mStroke << qM;
-
-		//filled only when specified -> move to filled/empty
-		if (mFill != "unspecified")
-		{
-			file << space << fill << qM << mFill << qM;
-		}
-
-		file << end << std::endl;
-		file.close();
+		file.close();	
 	}
 	catch(std::string const& ex)
 	{

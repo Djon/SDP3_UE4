@@ -19,14 +19,14 @@ typedef TGraphicObjects::const_iterator TGraphicObjectsItor;
 
 std::string const version = "<?xml version=\"1.0\"?>";
 std::string const link = "<svg xmlns=\"http://www.w3.org/2000/svg\">";
-std::string const end = "</svg>";
+std::string const endSVG = "</svg>";
 
 class Image 
 	: public Object
 {
 public:
 	//Default CTor
-	Image(std::string const& str/*Keine Ahnung mehr was des ist*//*->Dateiname wo er das ganze reinschreiben soll*/, IGraphicObjectFactory* factory);
+	Image(std::string const& str, IGraphicObjectFactory* factory);
 
 	//virtual Destructor
 	virtual ~Image();

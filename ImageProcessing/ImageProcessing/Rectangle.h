@@ -5,26 +5,38 @@
 // Description : Header for Rectangle.cpp
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef CIRCLE_H
-#define CIRCLE_H
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 
 #include <string>
 #include "GraphicObject.h"
+
+std::string const begin = "<";
+std::string const rect = "rect";
+std::string const x = "x=";
+std::string const y = "y=";
+std::string const width = "width=";
+std::string const height = "height=";
+std::string const stroke = "stroke=";
+std::string const fill = "fill=";
+std::string const end = "/>";
+std::string const space = " ";
+std::string const qM = "\"";	//Quotation Mark
 
 class Rectangle 
 	: public GraphicObject
 {
 public:
 	//Default CTor
-	Rectangle();
+	//Rectangle();
 
 	//virtual Destructor
 	virtual ~Rectangle();
 
-	virtual void Write();
+	virtual void Write(std::string const& filename);
 private:
 	size_t mHeight;
 	size_t mWidth;
 };
 
-#endif
+#endif	//RECTANGLE_H

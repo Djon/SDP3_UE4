@@ -282,6 +282,11 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b34f816d-65ef-409c-986e-099840365376" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="a4e02516-edd9-4c55-b4b7-9d71740b5f87" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
@@ -306,6 +311,11 @@
                   <type_NamedElement>
                     <referencedTypeMoniker Id="68cc06ac-0c41-4400-8970-bf9250228279" LastKnownName="void" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f7f4d197-7d3c-4b58-9a1f-68d2f6681085" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="12f8865d-4225-4921-b3b3-72f7f8fa8254" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -334,6 +344,11 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8aa7d7f9-a089-43c2-80f4-fe3496afb8d5" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="82253135-c3ad-496f-9879-3ec4f59185ba" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
@@ -358,6 +373,11 @@
                   <type_NamedElement>
                     <referencedTypeMoniker Id="68cc06ac-0c41-4400-8970-bf9250228279" LastKnownName="void" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1af43cc0-5d8f-423b-a81a-2cc5334a4368" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="50f201e2-c895-4a0a-853c-91ff89233e87" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -778,6 +798,11 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="80613fdf-246b-4d79-b60d-6cb362b55604" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="570dea7e-c743-4efb-93c4-7383a318d2d4" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
@@ -810,6 +835,11 @@
                   <type_NamedElement>
                     <referencedTypeMoniker Id="68cc06ac-0c41-4400-8970-bf9250228279" LastKnownName="void" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e49609a9-2e6f-4c75-a23c-78cb453f5542" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="c937a180-90ee-404e-86fc-4c6d77fc4469" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>

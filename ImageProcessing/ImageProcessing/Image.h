@@ -14,12 +14,19 @@
 #include "IGraphicObjectFactory.h"
 #include "GraphicObject.h"
 
+typedef std::list<GraphicObject*> TGraphicObjects;
+typedef TGraphicObjects::const_iterator TGraphicObjectsItor;
+
+std::string const version = "<?xml version=\"1.0\"?>";
+std::string const link = "<svg xmlns=\"http://www.w3.org/2000/svg\">";
+std::string const end = "</svg>";
+
 class Image 
 	: public Object
 {
 public:
 	//Default CTor
-	Image(std::string const& str/*Keine Ahnung mehr was des ist*/, IGraphicObjectFactory* factory);
+	Image(std::string const& str/*Keine Ahnung mehr was des ist*//*->Dateiname wo er das ganze reinschreiben soll*/, IGraphicObjectFactory* factory);
 
 	//virtual Destructor
 	virtual ~Image();
@@ -27,9 +34,9 @@ public:
 	void WriteSVG();
 	void ReadData(std::string const& filename1,std::string const& filename2);
 private:
-	string mFileNameSVG;
+	std::string mFileNameSVG;
 	IGraphicObjectFactory* mFactory;
-	std::list<GraphicObject*> mGraphicObjects;
+	TGraphicObjects mGraphicObjects;
 };
 
 #endif

@@ -8,6 +8,7 @@
 #ifndef FILLEDGRAPHICOBJECTFACTORY_H
 #define FILLEDGRAPHICOBJECTFACTORY_H
 
+#include <string>
 #include "Circle.h"
 #include "Rectangle.h"
 #include "SingletonBase.h"
@@ -19,8 +20,8 @@ class FilledGraphicObjectFactory :
 {
 	friend class SingletonBase<FilledGraphicObjectFactory>;
 public:
-	virtual Circle* CreateCircle(/*ToDo: Paramaters*/);
-	virtual Rectangle* CreateRectangel(/*ToDo: Paramaters*/);
+	Rectangle* CreateRectangle(size_t const& posX, size_t const& posY, size_t const& height, size_t const& width, std::string const& stroke, std::string const& fill);
+	Circle* CreateCircle(size_t const& posX, size_t const& posY, size_t const& radius, std::string const& stroke, std::string const& fill);
 private:
 	FilledGraphicObjectFactory();
 };

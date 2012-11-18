@@ -1,21 +1,13 @@
-///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
-// Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Header for Object.cpp
-///////////////////////////////////////////////////////////////////////////
+#include "FilledGraphicObjectFactory.h"
+#include "RectangleFilled.h"
+#include "Image.h"
 
-#ifndef OBJECT_H
-#define OBJECT_H
-
-class Object
+Rectangle* FilledGraphicObjectFactory::CreateRectangle(size_t const& posX, size_t const& posY, size_t const& height, size_t const& width, std::string const& stroke, std::string const& fill)
 {
-public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
-};
+	return new RectangleFilled(posX, posY, height, width, stroke, fill);
+}
 
-#endif
+Circle* FilledGraphicObjectFactory::CreateCircle(size_t const& posX, size_t const& posY, size_t const& radius, std::string const& stroke, std::string const& fill)
+{
+	return new CircleFilled();
+}

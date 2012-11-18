@@ -16,12 +16,12 @@ class RectangleFilled
 {
 public:
 	//Default CTor
-	RectangleFilled();
+	RectangleFilled(size_t const& posX, size_t const& posY, size_t const& height, size_t const& width, std::string const& stroke, std::string const& fill);
 
 	//virtual Destructor
-	virtual ~RectangleFilled();
+	~RectangleFilled();
 
-	virtual void Write();
+	void Write();
 };
 
 #endif

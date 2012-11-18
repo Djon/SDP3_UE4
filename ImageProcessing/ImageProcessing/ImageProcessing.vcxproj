@@ -103,6 +103,10 @@
     <ClInclude Include="RectangleFilled.h" />
     <ClInclude Include="SingletonBase.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Circ.data" />
+    <None Include="Rect.data" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

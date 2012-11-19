@@ -33,7 +33,6 @@ void ImageManagment::AddImage(std::string const& filename1, std::string const& f
 
 void ImageManagment::WriteSVG()
 {
-	std::cout << *(mImageList.begin()) << std::endl;
 	std::for_each(mImageList.begin(),mImageList.end(),[](Image* img)
 	{
 		img->WriteSVG();

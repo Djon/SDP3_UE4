@@ -106,5 +106,41 @@
     <None Include="Circ.data">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="EmptyCircle.data">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="EmptyRect.data">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Circle_Wrong.data">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Rect_Wrong.data">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Empty_Testcase0_NotHere.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Empty_Testcase1_EmptyFile.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Empty_Testcase2_FilledFile.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Empty_Testcase3_Filled_File_Wrong_Data.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Filled_Testcase0_NotHere.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Filled_Testcase1_EmptyFile.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Filled_Testcase2_FilledFile.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Filled_Testcase3_Filled_File_Wrong_Data.svg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

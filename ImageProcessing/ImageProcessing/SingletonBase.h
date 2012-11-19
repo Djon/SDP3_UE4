@@ -20,7 +20,7 @@ public:
 		return oInstance;
 	}
 protected:
-	SingletonBase(){}
+	SingletonBase(){};
 private:
 	SingletonBase(SingletonBase const& s){};
 	SingletonBase& operator = (SingletonBase const& s){};

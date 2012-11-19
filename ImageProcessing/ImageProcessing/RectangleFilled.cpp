@@ -23,7 +23,6 @@ void RectangleFilled::Write(std::ofstream& stream)
 			throw(ex);
 		}
 		stream << space << fill << qM << mFill << qM << end << std::endl;
-		stream.close();		
 	}
 	catch(std::string const& ex)
 	{

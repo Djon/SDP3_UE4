@@ -22,7 +22,9 @@ Image::~Image()
 void Image::WriteSVG()
 {
 	try {
-		std::ofstream file(mFileNameSVG, std::fstream::out);
+		std::ofstream file;
+		file.open(mFileNameSVG);
+
 		if (!file.is_open())
 		{
 			std::string ex("File couldn't be opened");
@@ -30,6 +32,12 @@ void Image::WriteSVG()
 		}
 
 		file << version << std::endl << link << std::endl;
+
+		/*for(TGraphicObjectsItor itor = mGraphicObjects.begin(); itor != mGraphicObjects.end(); ++itor)
+		{
+		(*itor)->Write(file);
+		++itor;
+		}*/
 
 		std::for_each(mGraphicObjects.begin(),mGraphicObjects.end(),[&file](GraphicObject* obj)
 		{
@@ -111,8 +119,10 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 				}
 				else
 				{
-					std::stringstream(buffer.substr(0,pos)) >> fill;
+					pos = buffer.find_first_of(' ');
+					fill = buffer.substr(0,pos);
 				}
+				buffer.erase();
 				mGraphicObjects.push_back(mFactory->CreateRectangle(posX,posY,width,height,stroke,fill));
 			}
 		}
@@ -160,7 +170,8 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 				}
 				else
 				{
-					std::stringstream(buffer.substr(0,pos)) >> fill;
+					pos = buffer.find_first_of(' ');
+					fill = buffer.substr(0,pos);
 				}
 				buffer.erase();
 				mGraphicObjects.push_back(mFactory->CreateCircle(posX,posY,radius,stroke,fill));

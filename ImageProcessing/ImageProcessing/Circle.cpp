@@ -22,10 +22,10 @@ void Circle::Write(std::ofstream& stream)
 	}
 	catch(std::string const& ex)
 	{
-		std::cerr << "Rectangle.cpp::Write: " << ex << std::endl;
+		std::cerr << "Circle.cpp::Write: " << ex << std::endl;
 	}
 	catch(...)
 	{
-		std::cerr << "Rectangle.cpp::Write: Unknown Exception occured" << std::endl;
+		std::cerr << "Circle.cpp::Write: Unknown Exception occured" << std::endl;
 	}
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="200" height="50" stroke="blue" fill="blue"/>
+<rect x="0" y="60" width="50" height="100" stroke="yellow" fill="purple"/>
+<circle cx="250" cy="25" r="20" stroke="black" fill="green"/>
+<circle cx="400" cy="250" r="180" stroke="brown" fill="teal"/>
+</svg>

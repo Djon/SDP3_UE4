@@ -106,7 +106,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Circ.data" />
+    <None Include="Circle_Wrong.data" />
+    <None Include="EmptyCircle.data" />
+    <None Include="EmptyRect.data" />
+    <None Include="Empty_Testcase0_NotHere.svg" />
+    <None Include="Empty_Testcase1_EmptyFile.svg" />
+    <None Include="Empty_Testcase2_FilledFile.svg" />
+    <None Include="Empty_Testcase3_Filled_File_Wrong_Data.svg" />
+    <None Include="Filled_Testcase0_NotHere.svg" />
+    <None Include="Filled_Testcase1_EmptyFile.svg" />
+    <None Include="Filled_Testcase2_FilledFile.svg" />
+    <None Include="Filled_Testcase3_Filled_File_Wrong_Data.svg" />
     <None Include="Rect.data" />
+    <None Include="Rect_Wrong.data" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

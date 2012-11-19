@@ -43,7 +43,7 @@ commentstyle=\color{dkgreen},       % comment style
 \normalsize
 
 %Pfad zu c++ Dateien
-\newcommand{\CodePath}{../ImageManagment/ImageManagment/}
+\newcommand{\CodePath}{../ImageProcessing/ImageProcessing/}
 
 %Beginn des Dokuments
 \section{Organisatorisches}
@@ -76,26 +76,21 @@ commentstyle=\color{dkgreen},       % comment style
 \subsection{Zeitaufwand}
 	\begin {itemize}
 		\item geschätzte Mh: 20h
-		\item tatsächlich: Reinhard (10h), Bernhard  (9h)
+		\item tatsächlich: Reinhard (11h), Bernhard  (9h)
 	\end {itemize}
 
 
 \section{Systemspezifikation}
 
-Es soll für die beiden Firmen Epcos und Nortel Networks ein Verschlüsselungssystem mit jeweils einem firmeneigenen Interface entworfen werden. Die geforderte Verschlüsselungssoftware soll in der Lage sein Daten mithilfe des Caesar und RSA Algorithmus zu verschlüsseln und entschlüsseln.
-\newline
-Das Interface der Firma Epcos bietet nur die RSA Verschlüsselung an.
-\newline
-Das Interface der Firma Nortel Networks bietet beide Verschlüsselungsalgorithmen an. Der entsprechende Algorithmus wird mithilfe einer Enumeration ausgewählt.
+Es soll eine Software für die Erzeugung und Verwaltung von Bildern mit graphischen Objekten erstellt werden. Die Bilder sind in einer Bildverwaltung abgelegt. SVG-Dateien der Bilder können erzeugt werden. Diese können dann in einem Browser angezeigt werden.
 \\
-
 
 \newpage
 \section {Systementwurf}
 
 \subsection {Klassendiagramm}
 
-\includegraphics[angle=90,scale=0.6] {../Klassendiagramm.png}
+%\includegraphics[angle=90,scale=0.6] {../Klassendiagramm.png}
 
 \newpage
 \subsection {Komponentenübersicht}
@@ -104,37 +99,49 @@ Das Interface der Firma Nortel Networks bietet beide Verschlüsselungsalgorithme
 	\newline
 	Basis aller Basisklassen.
 	
-	\item Klasse "Cryptographer":
+	\item Klasse "SingletonBase":
 	\newline
-	Basisklasse für der Verschlüsselungsalgorithmen.
+	Template Basisklasse für Singletons.
 	
-	\item Klasse "CryptographerCaesar":
+	\item Klasse "ImageManagement":
 	\newline
-	Stellt den Caesar Algorithmus bereit.
+	Verwaltet die Bilder.
 	
-	\item Klasse "CryptographerRSA":
+	\item Klasse "Image":
 	\newline	
-	Stellt den RSA Algorithmus bereit.
+	Beinhaltet die einzelnen graphischen Objekte. Kann in eine SVG-Datei geschrieben werden.
 	
-	\item Interface "IEpcos":
+	\item Interface "IGraphicObjectFactory":
 	\newline
-	Interface für die Firma Epcos. Stellt nur RSA zur Verfügung.
+	Interface für die Fabrik die die Objekte erzeugt.
 	
-	\item Interface "INortelNetworks":
+	\item Klasse "FilledGraphicObjectFactory":
 	\newline
-	Interface für die Firma NortelNetworks. Stellt RSA und Caesar zur Verfügung.
+	Erzeugt gefüllte graphische Objekte.
 	
-	\item Klasse "EpcosAdapter":
+	\item Klasse "EmptyGraphicObjectFactory":
 	\newline
-	Implementiert das Interface "IEpcos".
+	Erzeugt leere graphische Objekte.
 	
-	\item Klasse "NortelNetworksAdapter":
+	\item Klasse "GraphicObject":
 	\newline
-	Implementiert das Interface "INortelNetworks".
+	Abstrakte Basisklasse für ein graphisches Objekt.
 	
-	\item Enumeration "TEncoding":
+	\item Klasse "Rectangle":
 	\newline
-	Dient zur Auswahl des Verschlüsselungsalgorithmus.
+	Abgeleitet von GraphicObject. Basisklasse für ein Viereck.
+
+	\item Klassen "RectangleFilled und RectangleEmpty":
+	\newline
+	Abgeleitet von Rectangle. Vierecke die entweder gefüllt oder leer sind.
+
+	\item Klasse "Circle":
+	\newline
+	Abgeleitet von GraphicObject. Basisklasse für einen Kreis.
+
+	\item Klassen "CircleFilled und CircleEmpty":
+	\newline
+	Abgeleitet von Circle. Kreise die entweder gefüllt oder leer sind.
 	
 	
 \end {itemize}
@@ -145,252 +152,144 @@ Das Interface der Firma Nortel Networks bietet beide Verschlüsselungsalgorithme
 Abstrakte Basisklasse aller Klassen. Von ihr werden alle anderen Klassen abgeleitet. Beinhaltet einen virtuellen Destruktor.
 
 
-\subsection {Klasse "Cryptographer"}
-Hat einen String in dem der aktuelle Fileinhalt gespeichert wird.
+\subsection {Klasse "SingletonBase"}
+Template Basisklasse für die Singletons. Hat einen static Member der auf die Klasse selbst zeigt. Zuweisungsoperator und Copyconstructor sind private. Constructor ist protected.
 \\
 
-\textbf {Methode "Decrypt": } 
+\textbf {Methode "GetInstance": } 
+\newline
+Schnittstelle: 
+Rückgabetyp: SingletonBase\&.
+\newline
+Static Function die ein Objekt der Klasse erzeugt und einen Zeiger darauf zurückgibt.
+\\
+
+\subsection {Klasse "ImageManagement"}
+Hat eine Liste in der die Bilder gespeichert sind. Ist ein Singleton, Constructor ist private.
+\\
+
+\textbf {Methode "AddImage": } 
 \newline
 Schnittstelle: 
 Rückgabetyp: void.
+\newline
+Parameter: string const\& filename1, string const\& filename2, string const\& SVGFileName, IGraphicObjectFactory* factory
+\newline
+Erzeugt ein neues Bild. Ruft dann die ReadData Funktion des Bildes auf und fügt es zur Liste mit den Bildern hinzu.
+\\
+
+\textbf {Methode "WriteSVG": } 
+\newline
+Schnittstelle:
+\newline
+Rückgabetyp: void.
+\newline
+Ruft für jedes Bild WriteSVG auf.
+\\
+
+\subsection {Klasse "Image"}
+Beinhaltet die Fabrik mit der die Bilder erzeugt werden, den Namen unter der die SVG-Datei gespeichert werden soll und eine Liste mit den graphischen Objekten.
+\\
+
+\textbf {Constructor: } 
+\newline
+Schnittstelle: 
+Parameter: std::string const\& str, IGraphicObjectFactory* factory
+\newline
+Legt die Fabrik und den Dateinamen fest.
+\\
+
+\textbf {Methode "ReadData": } 
+\newline
+Schnittstelle:
+\newline
+Rückgabetyp: void.
+\newline
+Parameter: string const\& filename1, string const\& filename2
+\newline
+Liest die Daten von der Datei mit den Vierecken und der Datei mit den Kreisen ein, erzeugt die Objekte mit der jeweiligen Fabrik und fügt sie dann der Liste mit den Graphischen Objekten hinzu.
+\\
+
+\textbf {Methode "WriteSVG": } 
+\newline
+Schnittstelle: 
+\newline
+Rückgabetyp: void.
+\newline
+Öffnet die Datei, schreibt den Header hinein, ruft dann die Write Funktionen von den Graphischen Objekten auf und schreibt zum Schluss den Abschluss in die Datei.
+\\
+
+
+\subsection {Interface "IGraphicObjectFactory"}
+Ist die Schnittstelle für die Fabriken, die die gefüllten oder leeren Graphischen Objekte erzeugen.
+\\
+
+\textbf {Methode "CreateRectangle": } 
+\newline
+Schnittstelle: 
+\newline
+Rückgabetyp: Rectangle*.
+\newline
+Parameter: size\_t const\& posX, size\_t const\& posY, size\_t const\& width, size\_t const\& height, string const\& stroke, string const\& fill
 \newline
 Pure virtual function.
 \\
 
-\textbf {Methode "Encrypt": } 
-\newline
-Schnittstelle:
-\newline
-Rückgabetyp: void.
-\newline
-Pure virtual function.
-\\
-
-\textbf {Methode "ReadFile": } 
-\newline
-Schnittstelle:
-\newline
-Parameter: string const\& filename.
-\newline
-Rückgabetyp: void.
-\newline
-Liest ein File mithilfe von FileToString ein.
-\\
-
-\textbf {Methode "WriteFile": } 
+\textbf {Methode "CreateCircle": } 
 \newline
 Schnittstelle: 
 \newline
-Parameter: string const\& filename.
+Rückgabetyp: Circle*.
 \newline
-Rückgabetyp: void.
-\newline
-Schreibt die Daten in mData in ein File.
-\\
-
-\textbf {Methode "FileToString": } 
-\newline
-Schnittstelle: 
-\newline
-Parameter: string const\& filename.
-\newline
-Rückgabetyp: void.
-\newline
-Schreibt die Daten der Datei in den member mData.
-\\
-
-
-\subsection {Klasse "CryptographerCaesar"}
-Ermöglicht es Daten mithilfe des Caesar Algorithmus zu verschlüsseln und entschlüsseln.
-\\
-
-\textbf {Methode "Decrypt": } 
-\newline
-Schnittstelle: 
-Rückgabetyp: void.
-\newline
-Ruft für jeden Character von mData die Funktion DecryptCaesar auf.
-\\
-
-\textbf {Methode "Encrypt": } 
-\newline
-Schnittstelle:
-\newline
-Rückgabetyp: void.
-\newline
-Ruft für jeden Character von mData die Funktion EncryptCaesar auf.
-\\
-
-\textbf {Methode "EncryptCaesar": } 
-\newline
-Schnittstelle: 
-\newline
-Parameter: char\& ch.
-\newline
-Rückgabetyp: void.
-\newline
-Verschlüsselt den aktuellen character.
-\\
-
-\textbf {Methode "DecryptCaesar": } 
-\newline
-Schnittstelle: 
-\newline
-Parameter: char\& ch.
-\newline
-Rückgabetyp: void.
-\newline
-Entschlüsselt den aktuellen character.
-\\
-
-
-\subsection {Klasse "CryptographerRSA"}
-Ermöglicht es Daten mithilfe des RSA Algorithmus zu verschlüsseln und entschlüsseln.
-\\
-
-\textbf {Methode "Decrypt": } 
-\newline
-Schnittstelle: 
-Rückgabetyp: void.
-\newline
-Ruft für jeden Character von mData die Funktion DecryptRSA auf.
-\\
-
-\textbf {Methode "Encrypt": } 
-\newline
-Schnittstelle:
-\newline
-Rückgabetyp: void.
-\newline
-Ruft für jeden Character von mData die Funktion EncryptRSA auf.
-\\
-
-\textbf {Methode "EncryptRSA": } 
-\newline
-Schnittstelle: 
-\newline
-Parameter: char\& ch.
-\newline
-Rückgabetyp: void.
-\newline
-Ruft für jeden character die Funktion PowerModulo mit den entsprechenden Werten auf.
-\\
-
-\textbf {Methode "DecryptRSA": } 
-\newline
-Schnittstelle: 
-\newline
-Parameter: char\& ch.
-\newline
-Rückgabetyp: void.
-\newline
-Ruft für jeden character die Funktion PowerModulo mit den entsprechenden Werten auf.
-\\
-
-\textbf {Methode "PowerModulo": } 
-\newline
-Schnittstelle: 
-\newline
-Parameter: int x, int ed.
-\newline
-Rückgabetyp: void.
-\newline
-Berechnet folgenden Ausdruck: x\^(e|d) mod n.
-\\
-
-
-\subsection {Klasse "INortelNetworks"}
-Bietet jeweils eine Funktion zum ent- und verschlüsseln an. Der Algorithmus wird mithilfe einer Enum festgelegt.
-\\
-
-\textbf {Methode "Decipher": } 
-\newline
-Schnittstelle:
-Parameter: TEncoding encoding, std::string const\& filename
-Rückgabetyp: void.
-\newline
-Pure virtual function.
-\\
-
-\textbf {Methode "Encipher": } 
-\newline
-Schnittstelle:
-Parameter: TEncoding encoding, std::string const\& filename
-Rückgabetyp: void.
+Parameter: size\_t const\& posX, size\_t const\& posY, size\_t const\& radius, string const\& stroke, string const\& fill
 \newline
 Pure virtual function.
 \\
 
 
-\subsection {Klasse "NortelNetworksAdapter"}
-Implementiert das Interface INortelNetworks. Je nach Verschlüsselungsart wird ein dynamischer Cryptographer angelegt, entweder vom Typ RSA oder Caesar. Nach dem De-/Encipher Aufruf wird dieser wieder freigegeben.
+\subsection {Klassen "FilledGraphicObjectFactory" und "EmptyGraphicObjectFactory"}
+Implementieren die Funktionen aus dem Interface. Es wird der Constructor für das entsprechende Graphische Objekt aufgerufen. Je nach dem Kreis/Rechteck gefüllt/leer. Beide sind Singletons.
 \\
 
-\textbf {Methode "Decipher": } 
+\subsection {Klasse "GraphicObject"}
+Beinhaltet die allgemeinen Information eines graphischen Objekts: Füllung, x-Position, y-Position, Randfarbe. Copyconstructor und Zuweisungsoperator sind private damit das Objekt nicht zugewiesen oder kopiert werden kann.
+\\
+
+\subsection {Klasse "Rectangle"}
+Hat zusätzlich die Attribute Höhe und Breite des Rechtecks.
+\\
+
+\textbf {Methode "Write": } 
 \newline
 Schnittstelle:
-Parameter: TEncoding encoding, std::string const\& filename
+Parameter: ofstream\& stream.
+\newline
 Rückgabetyp: void.
 \newline
-Die Datei wird mithilfe des entsprechenden Cryptographers ausgelesen und entschlüsselt. Danach wird mit ihm eine neue unverschlüsselete Datei erstellt. Die Dateiendung wird auf .txt gesetzt.
+Daten werden entsprechend der SVG Syntax in den Stream geschrieben.
 \\
 
-\textbf {Methode "Encipher": } 
+\subsection {Klassen "RectangleFilled" und "RectangleEmpty"}
+Haben Write Funktionen die noch die entsprechenden Daten zum Stream hinzufügen.
+\\
+
+\subsection {Klasse "Circle"}
+Hat zusätzlich das Attribut Radius des Kreises.
+\\
+
+\textbf {Methode "Write": } 
 \newline
 Schnittstelle:
-Parameter: TEncoding encoding, std::string const\& filename
+Parameter: ofstream\& stream.
+\newline
 Rückgabetyp: void.
 \newline
-Die Datei wird mithilfe des entsprechenden Cryptographers ausgelesen und verschlüsselt. Danach wird mit ihm eine neue verschlüsselte Datei erstellt. Die Dateiendung entspricht dabei der jeweiligen Verschlüsselungstechnick.
+Daten werden entsprechend der SVG Syntax in den Stream geschrieben.
 \\
 
-
-\subsection {Klasse "IEpcos"}
-Bietet jeweils eine Funktion zum ent- und verschlüsseln an. Der Algorithmus ist nicht wählbar, es wird immer RSA verwendet.
+\subsection {Klassen "CircleFilled" und "CircleEmpty"}
+Haben Write Funktionen die noch die entsprechenden Daten zum Stream hinzufügen.
 \\
-
-\textbf {Methode "DecryptRSA": } 
-\newline
-Schnittstelle:
-Parameter: std::string const\& filename
-Rückgabetyp: void.
-\newline
-Pure virtual function.
-\\
-
-\textbf {Methode "EncryptRSA": } 
-\newline
-Schnittstelle:
-Parameter: std::string const\& filename
-Rückgabetyp: void.
-\newline
-Pure virtual function.
-\\
-
-
-\subsection {Klasse "EpcosAdapter"}
-Bietet jeweils eine Funktion zum ent- und verschlüsseln an. Der Algorithmus ist nicht wählbar, es wird immer RSA verwendet. Die Ver-/Entschlüsselung erfolgt durch einen dynamisch angelegten CryptographerRSA.
-\\
-
-\textbf {Methode "DecryptRSA": } 
-\newline
-Schnittstelle:
-Parameter: std::string const\& filename
-Rückgabetyp: void.
-\newline
-Die Datei wird mithilfe des CryptographerRSA ausgelesen und entschlüsselt. Danach wird mit ihm eine neue entschlüsselte Datei erstellt. Die Dateiendung wird auf .txt gesetzt.
-\\
-
-\textbf {Methode "EncryptRSA": } 
-\newline
-Schnittstelle:
-Parameter: std::string const\& filename
-Rückgabetyp: void.
-\newline
-Die Datei wird mithilfe des CryptographerRSA ausgelesen und verschlüsselt. Danach wird mit ihm eine neue verschlüsselte Datei erstellt. Die Dateiendung wird auf .RSA gesetzt.
-\\
-
-
 
 \newpage
 \section {Source Code}
@@ -399,80 +298,75 @@ Die Datei wird mithilfe des CryptographerRSA ausgelesen und verschlüsselt. Dana
 \lstinputlisting[language=C++]{\CodePath Object.cpp}
 \newpage
 
-\lstinputlisting[language=C++]{\CodePath Cryptographer.h}
-\newpage
-\lstinputlisting[language=C++]{\CodePath Cryptographer.cpp}
+\lstinputlisting[language=C++]{\CodePath SingletonBase.h}
 \newpage
 
-\lstinputlisting[language=C++]{\CodePath CryptographerCaeser.h}
+\lstinputlisting[language=C++]{\CodePath ImageManagment.h}
 \newpage
-\lstinputlisting[language=C++]{\CodePath CryptographerCaeser.cpp}
-\newpage
-
-\lstinputlisting[language=C++]{\CodePath CryptographerRSA.h}
-\newpage
-\lstinputlisting[language=C++]{\CodePath CryptographerRSA.cpp}
+\lstinputlisting[language=C++]{\CodePath  ImageManagment.cpp}
 \newpage
 
-\lstinputlisting[language=C++]{\CodePath INortelNetworks.h}
-\lstinputlisting[language=C++]{\CodePath NortelNetworksAdapter.h}
+\lstinputlisting[language=C++]{\CodePath Image.h}
 \newpage
-\lstinputlisting[language=C++]{\CodePath NortelNetworksAdapter.cpp}
+\lstinputlisting[language=C++]{\CodePath Image.cpp}
 \newpage
 
-\lstinputlisting[language=C++]{\CodePath IEpcos.h}
-\lstinputlisting[language=C++]{\CodePath EpcosAdapter.h}
+\lstinputlisting[language=C++]{\CodePath IGraphicObjectFactory.h}
 \newpage
-\lstinputlisting[language=C++]{\CodePath EpcosAdapter.cpp}
+
+\lstinputlisting[language=C++]{\CodePath FilledGraphicObjectFactory.h}
 \newpage
+\lstinputlisting[language=C++]{\CodePath FilledGraphicObjectFactory.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath EmptyGraphicObjectFactory.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath EmptyGraphicObjectFactory.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath GraphicObject.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath GraphicObject.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath Rectangle.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath Rectangle.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath RectangleFilled.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath RectangleFilled.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath RectangleEmpty.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath RectangleEmpty.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath Circle.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath Circle.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath CircleFilled.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath CircleFilled.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath CircleEmpty.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath CircleEmpty.cpp}
+\newpage
+
+\lstinputlisting[language=C++]{\CodePath main.cpp}
+\newpage
+
 
 \section {Testausgaben} 
 
 \begin {verbatim}
-Visual Leak Detector Version 2.2.3 installed.
-Testcase0: File doesnt exist
-Encrypt with Epcos, RSA: testcase0.txt ...
-EpcosAdapter::EncryptRSA: File couldn't be opened
-Finished
-Decrypt with Epcos, RSA: testcase0.txt.RSA ... 
-EpcosAdapter.cpp::DecryptRSA: File couldn't be opened
-Finished
-Encipher with NortelNetworks, RSA: testcase0.txt ... 
-NortelNetworksAdapter::Encipher: File couldn't be opened
-Finished
-Decipher with NortelNetworks, RSA: testcase0.txt.RSA ... 
-NortelNetworksAdapter::Decipher: File couldn't be opened
-Finished
-Encipher with NortelNetworks, Caesar: testcase0.txt ... 
-NortelNetworksAdapter::Encipher: File couldn't be opened
-Finished
-Decipher with NortelNetworks, Caesar: testcase0.txt.Caesar ...
-NortelNetworksAdapter::Decipher: File couldn't be opened
-Finished
-Testcase1: File is empty
-Encrypt with Epcos, RSA: testcase1.txt ... Finished
-Decrypt with Epcos, RSA: testcase1.txt.RSA ... Finished
-Encipher with NortelNetworks, RSA: testcase1.txt ... Finished
-Decipher with NortelNetworks, RSA: testcase1.txt.RSA ... Finished
-Encipher with NortelNetworks, Caesar: testcase1.txt ... Finished
-Decipher with NortelNetworks, Caesar: testcase1.txt.Caesar ... Finished
-Testcase2: Ascii symbols
-Encrypt with Epcos, RSA: testcase2.txt ... Finished
-Decrypt with Epcos, RSA: testcase2.txt.RSA ... Finished
-Encipher with NortelNetworks, RSA: testcase2.txt ... Finished
-Decipher with NortelNetworks, RSA: testcase2.txt.RSA ... Finished
-Encipher with NortelNetworks, Caesar: testcase2.txt ... Finished
-Decipher with NortelNetworks, Caesar: testcase2.txt.Caesar ... Finished
-Testcase3: Normal text
-Encrypt with Epcos, RSA: testcase3.txt ... Finished
-Decrypt with Epcos, RSA: testcase3.txt.RSA ... Finished
-Encipher with NortelNetworks, RSA: testcase3.txt ... Finished
-Decipher with NortelNetworks, RSA: testcase3.txt.RSA ... Finished
-Encipher with NortelNetworks, Caesar: testcase3.txt ... Finished
-Decipher with NortelNetworks, Caesar: testcase3.txt.Caesar ... Finished
-No memory leaks detected.
-Visual Leak Detector is now exiting.
-Drücken Sie eine beliebige Taste . . .
+
 \end {verbatim}
 
 

@@ -615,6 +615,30 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="775f3903-c2ae-4e0e-b78f-77298506b8aa"
+            name="WriteSVG"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4cffbfe1-3739-4440-ab88-f02ea8ac04b4"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c16d0353-91cb-4181-a4bd-c7cf806a398e"
+                      LastKnownName="void"
+                      LastKnownLocation="Classdiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -715,8 +739,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a4e02516-edd9-4c55-b4b7-9d71740b5f87"
-                  name="string const&amp;"
+                  Id="59149553-2d3e-4b80-9e2b-caba2ee75446"
+                  name="ofstream&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -776,8 +800,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="12f8865d-4225-4921-b3b3-72f7f8fa8254"
-                  name="string const&amp;"
+                  Id="bfa93ccb-e256-47a6-b53e-0697682d76ce"
+                  name="ofstream&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -844,8 +868,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="82253135-c3ad-496f-9879-3ec4f59185ba"
-                  name="string const&amp;"
+                  Id="0b16c638-2251-4001-8f4d-9bfb0f198341"
+                  name="ofstream&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -905,8 +929,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="50f201e2-c895-4a0a-853c-91ff89233e87"
-                  name="string const&amp;"
+                  Id="ccdd5d88-b01c-4a38-ad41-3225c9d09615"
+                  name="ofstream&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -955,15 +979,36 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1e8fad5b-a508-44bc-8d75-cff70f1350e3"
-                  name="size_t"
+                  Id="2ea11ff0-abde-46a1-946d-eed0089a946a"
+                  name="size_t const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b446887a-1378-40d3-9e83-13bb161b2dad"
-                  name="size_t"
+                  Id="ce6eefd6-2625-4c27-b8e7-123a3853e2f2"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="88b0160a-2897-47b4-bc3b-543129dcbae0"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f45965bc-5960-46dc-b562-a4ac5b4db609"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3a2c7cdd-52b2-4bfa-85f3-08ea1b803036"
+                  name="string const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -993,15 +1038,43 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="662e0e0e-1103-4325-8f5a-30cb044bf811"
-                  name="size_t"
+                  Id="c892b36b-951a-4a00-9565-7f5b8e611942"
+                  name="size_t const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="e83c159d-44a3-4d9d-8ff4-8c648fd2c0cc"
-                  name="size_t"
+                  Id="d8ad13b7-48dc-4e65-9a80-8e7668a8da18"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2810e039-6298-4f2b-9ccb-dcc2923a2cf9"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1503d52e-4e9e-482f-9ab3-234dd5ab9de3"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4fd92624-90b7-4847-b7a1-d2f0230e252f"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="060185f6-7d00-4fd6-8ddd-c0b843ea014e"
+                  name="string const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1087,6 +1160,27 @@
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52bb6ad6-0ca5-4c32-8e3c-5bf9b333e57e"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b29ef35f-8344-4f2b-9616-c900c422fee9"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="77410cd7-99c1-43a6-bd95-47b1fcabdb50"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -1122,6 +1216,34 @@
                 <parameter
                   Id="28459489-44e3-4026-8859-763492ec7dc4"
                   name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7a5c9055-bf5b-46bc-b21a-29caef2e2282"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="efd8adc7-7b71-4052-9d49-b6d13a4a8b6e"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5a76e1c1-6e31-49fa-a365-5272fa313976"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cfb8b420-f9f8-48cb-819b-e32254bd7e30"
+                  name="string const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1216,6 +1338,27 @@
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="209dade6-376c-48e4-b6d2-a0b5dca487c7"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a5d65d17-94d4-44ee-9bd3-bdba94ee6bf0"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ff633a36-ad2b-44c0-8ac7-b4286009a8bb"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -1251,6 +1394,34 @@
                 <parameter
                   Id="2afbd686-4ac1-421d-8786-b7dd65221b5d"
                   name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e12a2eef-45d9-454b-82eb-3f353c38da83"
+                  name="size_t const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2d510a71-64ca-410f-8a17-3511d0339aaf"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="db32b993-dfcb-4016-a277-8beb32802495"
+                  name="string const&amp;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="06c56db3-4df6-472b-b26d-362227eca8a8"
+                  name="string const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1858,8 +2029,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="570dea7e-c743-4efb-93c4-7383a318d2d4"
-                  name="string const&amp;"
+                  Id="ecdaf5ea-3e13-49a1-aaf6-7a63283bcc63"
+                  name="ofstream&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1931,8 +2102,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c937a180-90ee-404e-86fc-4c6d77fc4469"
-                  name="string const&amp;"
+                  Id="001c6951-f1e0-4f1e-9466-1ee928040db7"
+                  name="ofstream&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>

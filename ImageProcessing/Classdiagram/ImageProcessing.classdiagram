@@ -258,6 +258,19 @@
           <operation Id="ceb41a2c-ced2-4084-a74b-b0e64624957c" name="ImageManagement" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6395d350-c2bc-4246-866a-8895a5a70406" />
           </operation>
+          <operation Id="b114f16d-0858-4f31-97c5-041a02023385" name="WriteSVG" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="775f3903-c2ae-4e0e-b78f-77298506b8aa" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4bad6bf6-c6d1-4672-bd3e-e5bcde8e057e" direction="Return" isUnique="false">
+                  <elementDefinition Id="4cffbfe1-3739-4440-ab88-f02ea8ac04b4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68cc06ac-0c41-4400-8970-bf9250228279" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -283,8 +296,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="b34f816d-65ef-409c-986e-099840365376" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="a4e02516-edd9-4c55-b4b7-9d71740b5f87" />
+                <parameter Id="fc7a2da3-1715-43ea-998b-be6880fece13" name="ofstream&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="59149553-2d3e-4b80-9e2b-caba2ee75446" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -314,8 +327,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="f7f4d197-7d3c-4b58-9a1f-68d2f6681085" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="12f8865d-4225-4921-b3b3-72f7f8fa8254" />
+                <parameter Id="965166f2-1c3e-41cb-8d69-423a3ef6b12a" name="ofstream&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="bfa93ccb-e256-47a6-b53e-0697682d76ce" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -345,8 +358,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="8aa7d7f9-a089-43c2-80f4-fe3496afb8d5" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="82253135-c3ad-496f-9879-3ec4f59185ba" />
+                <parameter Id="dc53bfda-8a76-4e2e-b6c6-1fc609008d75" name="ofstream&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="0b16c638-2251-4001-8f4d-9bfb0f198341" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -376,8 +389,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="1af43cc0-5d8f-423b-a81a-2cc5334a4368" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="50f201e2-c895-4a0a-853c-91ff89233e87" />
+                <parameter Id="e76831c4-c58d-4722-9e40-0840701e3e1e" name="ofstream&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="ccdd5d88-b01c-4a38-ad41-3225c9d09615" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -407,13 +420,28 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="a121f3b5-6b24-4dad-92ad-64dc683e0562" name="size_t" direction="In" isUnique="false">
-                  <elementDefinition Id="1e8fad5b-a508-44bc-8d75-cff70f1350e3" />
+                <parameter Id="988a99b5-5535-4d76-bf3c-a15f985f8078" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="2ea11ff0-abde-46a1-946d-eed0089a946a" />
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="7c8740f8-f478-48e0-8466-744e2cad2d4f" name="size_t" direction="In" isUnique="false">
-                  <elementDefinition Id="b446887a-1378-40d3-9e83-13bb161b2dad" />
+                <parameter Id="b31a68c4-2df2-4148-9674-0082c0a4fc08" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="ce6eefd6-2625-4c27-b8e7-123a3853e2f2" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8c52133a-4b33-493b-9b19-b9b2f37425df" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="88b0160a-2897-47b4-bc3b-543129dcbae0" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3d5ae7cc-b248-40fd-a3ca-43bb3698046d" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="f45965bc-5960-46dc-b562-a4ac5b4db609" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="33fa1cda-a651-48c7-8242-6b098318fa2d" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="3a2c7cdd-52b2-4bfa-85f3-08ea1b803036" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -430,13 +458,33 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="df076bd9-8301-4113-8f9f-628b32bbe154" name="size_t" direction="In" isUnique="false">
-                  <elementDefinition Id="662e0e0e-1103-4325-8f5a-30cb044bf811" />
+                <parameter Id="92e0458b-9773-4052-b1eb-8c8e86c15f17" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="c892b36b-951a-4a00-9565-7f5b8e611942" />
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="99f919c2-da92-4a53-ba94-a4679270f460" name="size_t" direction="In" isUnique="false">
-                  <elementDefinition Id="e83c159d-44a3-4d9d-8ff4-8c648fd2c0cc" />
+                <parameter Id="26a2e9bf-9120-422a-ad56-e28618b6b500" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="d8ad13b7-48dc-4e65-9a80-8e7668a8da18" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="64f9725c-0df3-4bcb-94b2-770b39855d97" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="2810e039-6298-4f2b-9ccb-dcc2923a2cf9" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="828b08c8-f33a-4738-9358-71dc9f768da6" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="1503d52e-4e9e-482f-9ab3-234dd5ab9de3" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9c123d3e-947e-4c73-9ed7-b47b8f980ae5" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="4fd92624-90b7-4847-b7a1-d2f0230e252f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b4e72a4a-9e4b-41e9-acce-04fbb32a315f" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="060185f6-7d00-4fd6-8ddd-c0b843ea014e" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -489,6 +537,21 @@
                   <elementDefinition Id="874a7028-0f73-4b55-b1f0-ff2b3d9bf780" />
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="89a3f83a-aa4c-49a5-8de4-c315b7f7f62b" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="52bb6ad6-0ca5-4c32-8e3c-5bf9b333e57e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ef40b72b-3d60-4747-8562-0e84a366c37d" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="b29ef35f-8344-4f2b-9616-c900c422fee9" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="729644d1-73b1-45aa-9dac-5fefdbfaa899" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="77410cd7-99c1-43a6-bd95-47b1fcabdb50" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation Id="63f89d95-823a-4ce6-b444-c1a0f0cec000" name="CreateRectangle" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -510,6 +573,26 @@
               <operationHasOwnedParameters>
                 <parameter Id="c4041848-0e5c-4b7d-b5e8-d2fcb09fac9d" name="size_t" direction="In" isUnique="false">
                   <elementDefinition Id="28459489-44e3-4026-8859-763492ec7dc4" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3430b308-ff2e-45d4-a079-ff46abce9e96" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="7a5c9055-bf5b-46bc-b21a-29caef2e2282" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e9fcf4a3-14ef-4e6e-a292-38db6a49fc64" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="efd8adc7-7b71-4052-9d49-b6d13a4a8b6e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="26247f7c-2d5d-41f8-a431-152de8bb35a2" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="5a76e1c1-6e31-49fa-a365-5272fa313976" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="22ef47f1-58b0-45f9-a325-cb3bf52efef5" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="cfb8b420-f9f8-48cb-819b-e32254bd7e30" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -565,6 +648,21 @@
                   <elementDefinition Id="8c9f8112-ef41-4bb9-b938-647a8d886a82" />
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81b54f57-2806-48ff-ab74-849697f9f679" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="209dade6-376c-48e4-b6d2-a0b5dca487c7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e3890b14-85e1-41c2-bbb4-372e6aae8985" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="a5d65d17-94d4-44ee-9bd3-bdba94ee6bf0" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="88525ace-4f0a-4cb0-b46c-f5ba2c79f455" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="ff633a36-ad2b-44c0-8ac7-b4286009a8bb" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation Id="4fc72169-95bf-40cc-90a1-0a38a93de0b4" name="CreateRectangle" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -586,6 +684,26 @@
               <operationHasOwnedParameters>
                 <parameter Id="80239158-78d8-414a-9e5a-dbefba02fbdc" name="size_t" direction="In" isUnique="false">
                   <elementDefinition Id="2afbd686-4ac1-421d-8786-b7dd65221b5d" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7d7a8c67-e8f7-4613-85cb-1cdc03a6c6ae" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="e12a2eef-45d9-454b-82eb-3f353c38da83" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c25ee957-2f9a-4ee8-8135-3bf4a8ef27fc" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="2d510a71-64ca-410f-8a17-3511d0339aaf" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="eda7e413-4561-4426-abd7-2b54368e9d54" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="db32b993-dfcb-4016-a277-8beb32802495" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7be30113-94ea-45d1-aae6-7be83956509b" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="06c56db3-4df6-472b-b26d-362227eca8a8" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -799,8 +917,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="80613fdf-246b-4d79-b60d-6cb362b55604" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="570dea7e-c743-4efb-93c4-7383a318d2d4" />
+                <parameter Id="0718c972-949d-47c8-9b5d-133de69b8126" name="ofstream&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="ecdaf5ea-3e13-49a1-aaf6-7a63283bcc63" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -838,8 +956,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e49609a9-2e6f-4c75-a23c-78cb453f5542" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="c937a180-90ee-404e-86fc-4c6d77fc4469" />
+                <parameter Id="effdf845-df77-4741-8ee8-26abbd42a5fd" name="ofstream&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="001c6951-f1e0-4f1e-9466-1ee928040db7" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>

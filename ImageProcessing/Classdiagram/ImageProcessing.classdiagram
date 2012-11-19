@@ -17,10 +17,6 @@
       <elementDefinition Id="b9aea028-946a-4c3b-a2a8-3d1f0e3cd731" />
       <body>&lt;&lt;creates&gt;&gt;</body>
     </comment>
-    <comment Id="1c3b3fce-062f-40d6-9717-45ca60600720">
-      <elementDefinition Id="8c466da0-94f9-4172-aed9-2d8de8120457" />
-      <body>&lt;&lt;use&gt;&gt;</body>
-    </comment>
     <comment Id="5b823bee-b943-4d00-a464-3af8e486f79a">
       <elementDefinition Id="bd9a4e4b-bf0a-4bef-828d-204dbfd5cc60" />
       <body>&lt;&lt;friend&gt;&gt;</body>
@@ -49,7 +45,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b6b6bb38-788d-4715-a9ca-8c6db192dbbe" name="Image" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="b6b6bb38-788d-4715-a9ca-8c6db192dbbe" name="Image" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="9cebb1d6-1ec7-4a4b-a979-bbc75c582a53" />
         <generalsInternal>
           <generalization Id="b74e4137-adbc-4bfe-a323-f6ac16f4e245" isSubstitutable="false">
@@ -278,9 +274,9 @@
       <class Id="b70f2487-4e41-4b4f-ae15-d55f1ade1620" name="RectangleFilled" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="7fbb3c58-5411-424a-8494-f11de494ffd7" />
         <generalsInternal>
-          <generalization Id="42f6fdf5-0b3b-4fa1-9a90-255e2bd2399f" isSubstitutable="false">
+          <generalization Id="04347064-e741-4ae0-96d3-470c79d7f605" isSubstitutable="false">
             <classMoniker Id="ec1a8799-9a25-4cfd-9151-8f1d79eeb612" LastKnownName="Rectangle" />
-            <elementDefinition Id="27667296-1839-4ab7-81c2-dbe0573c283b" />
+            <elementDefinition Id="c012daae-b124-4399-9e8b-41fe59574728" />
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
@@ -302,6 +298,41 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="1bc5e984-63f7-4b32-a185-6c7df395f238" name="RectangleFilled" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="912b806f-f315-4d36-a81d-9a0d33c6a95b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="52f52eed-81e0-4561-ae09-d94eb7643261" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="f6a72868-f327-4d9a-93f4-d41009a80223" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="538ee1f8-827e-4b18-8e3e-eddf4bdfabe6" name="size_t" direction="In" isUnique="false">
+                  <elementDefinition Id="0a300a47-27b7-4813-8abe-5407850d9ea2" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8005daa5-65c6-409e-bbf9-bedeea61a8a8" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="81d27bc7-358b-459b-97f4-1ee4d35481e5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="515e6f4f-67fa-4571-a62f-73586beae446" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="e5cf8eb3-e297-4d9a-8aef-9a04c7860875" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="45d94019-2d6a-4b4c-9ae7-331686114531" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="285726d2-5fee-403f-b5a6-614bf08e5043" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f9c7fb95-7d35-4d60-9c42-9a2ccc498b5b" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="6fd4c1ed-0857-4048-a606-99d332b92524" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -309,9 +340,9 @@
       <class Id="f7ffb97c-bf48-4fef-8d0a-503e5da8cf11" name="RectangleEmpty" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="77e340e7-11e0-42d5-88ba-38fdf9894d39" />
         <generalsInternal>
-          <generalization Id="853640c0-98c6-4b68-8c12-5c0dbcf0b920" isSubstitutable="false">
+          <generalization Id="d096b412-e724-405f-ae58-5707e99bfaf0" isSubstitutable="false">
             <classMoniker Id="ec1a8799-9a25-4cfd-9151-8f1d79eeb612" LastKnownName="Rectangle" />
-            <elementDefinition Id="85a8cd63-6df3-4dc0-baaf-829b0ee0b0d9" />
+            <elementDefinition Id="f3e06a8d-b3d1-4721-89f9-b3c2a5bfa490" />
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
@@ -329,6 +360,41 @@
               <operationHasOwnedParameters>
                 <parameter Id="965166f2-1c3e-41cb-8d69-423a3ef6b12a" name="ofstream&amp;" direction="In" isUnique="false">
                   <elementDefinition Id="bfa93ccb-e256-47a6-b53e-0697682d76ce" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b8cd900f-814a-45c7-a40e-dd7a62be5433" name="RectangleEmpty" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6697cd3b-52b5-42ba-8cb4-ce1323da7f23" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f98dd4f4-9969-43fc-9fa5-1de00e048ec8" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="602b8104-e56a-4459-be63-5de88368ed7e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e805bc89-538c-4d68-ba52-1d616c2fbbae" name="size_t" direction="In" isUnique="false">
+                  <elementDefinition Id="6295af14-241a-4912-8379-0c48aea0d51e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dcdb52be-c2a5-4a7f-a7be-f7d6c3aa0096" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="467c4b72-e33a-48f2-b6ce-ea2d92da0c1a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d40cb99-5b22-4812-b5dc-3fc9c0a11f96" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="a3c95879-34a4-4fa8-9dda-79df8c4f5bfb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="94f9849e-e18b-40b1-b2a1-59f29eabf0a8" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="a8aa2dc1-eb7a-49c1-beec-f92af50150c6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0309e171-4d1a-4079-82f5-83b7bee97b24" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="1ef4e174-eb5c-4a99-9be8-4aadf2ea6520" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -364,6 +430,36 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="a2fda050-764d-4483-9ea9-005a28854237" name="CircleFilled" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f748086f-abdf-4934-9ff7-ba5fc2339615" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4188dd3b-d5cd-41e3-b3b9-f2af15f6605a" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="7c8f92c0-e86e-4ade-95a6-15a1db52b6e6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="011e3990-10ca-42da-b8f4-eaa18179abe0" name="size_t" direction="In" isUnique="false">
+                  <elementDefinition Id="f6e8f61f-fe77-4105-860f-c3bdd2b9723f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b4bc404b-cfc1-4378-8e8c-548aba4adb9b" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="a43d0fbb-c14b-458b-b985-7a824a159fa1" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5579780a-ff1b-40c0-9360-cdc40f8f089b" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="42529e26-e34a-4426-8f8a-2240dced291f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="047bb93d-3596-4038-855e-cbe95bd73149" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="c5bd160e-4d13-4571-8f17-cdca858cf824" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -395,18 +491,42 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="01ea6bfe-7471-4be9-b3e0-81360c409bdd" name="CircleEmpty" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d5cde3c-1968-4e08-a2de-69a1db0fa827" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="aff77096-e3b3-4eb6-ad8f-32ba82b55aa1" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="66cc7e4d-c4d0-4bae-9729-cda908864129" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="42d49f7a-3f01-42a5-ad01-58c5b95f4996" name="size_t" direction="In" isUnique="false">
+                  <elementDefinition Id="47e81dfa-cbcd-4e69-a32f-028b01d5abdc" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ebb7417c-e437-4de4-9ba4-61ca6b3d3c44" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="285961bc-4ccc-4b57-9e7c-158bea616ed5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f74073e8-99da-4e7a-b5ac-9a2baa434891" name="size_t const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="25992e1a-9c5a-4be2-a4ea-4f9c433c36ef" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81a14ad5-dc82-4f9e-a857-e1c7ab06195d" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="0724a2a9-bf4d-47a6-bfd3-00ecfe4f48f9" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="690ec693-3d16-4dcc-8669-7dbca39f1e9a" name="IGraphicObjectFactory" isAbstract="false" isLeaf="false">
         <elementDefinition Id="d9ee134d-d762-4257-9134-1cca9867ebd5" />
-        <suppliersInternal>
-          <dependency Id="a10755c5-dcaf-450c-a82c-2f2d1b8ec730">
-            <classMoniker Id="c03db567-a1b1-48ba-85ec-44345e4d8843" LastKnownName="GraphicObject" />
-            <elementDefinition Id="f2c421af-b843-4f38-8a52-4096632ccaf8" />
-          </dependency>
-        </suppliersInternal>
         <ownedOperations>
           <operation Id="a56f682f-46f0-43a1-909c-55597b3372e1" name="CreateCircle" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ce7a3f5f-f53b-4cc9-aad7-a04030b2a3c0" />
@@ -723,9 +843,27 @@
             <elementDefinition Id="0cc391c5-35cf-4056-b681-5b22d4fe0be0" />
           </generalization>
         </generalsInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature Id="d0dd8a31-abe9-4041-9dae-a5273b56048c" parameters="" isLeaf="false">
+            <elementDefinition Id="4b744e68-6d26-4d2d-93c1-4eb662b9978c" />
+            <ownedParameters>
+              <classifierTemplateParameter Id="38724818-da47-4a39-9156-3221cb7ab40d">
+                <elementDefinition Id="62affb32-e480-43b5-a4a5-bb4217f2236f" />
+                <ownedParameterableElement>
+                  <class Id="71f6d5e6-e119-46b6-8b76-df76e17ead96" name="T_DERIVED" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="3bd8fb8c-f3d5-46d8-b355-a1e127584d8b" />
+                  </class>
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
         <ownedAttributesInternal>
-          <property Id="4cb876d3-4bec-4f2f-8a37-18a7027ce1e9" name="mSingletonBase*" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="2d6acea9-f3b0-4706-9b0c-6726008860fe" />
+          <property Id="fe4b6a22-dc73-4f10-965a-3ca935512ea8" name="oInstance" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="290720bb-cfaa-4eef-8e60-606958513430" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6c54e708-97a0-4bc6-8e20-56249961837c" LastKnownName="T_DERIVED" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
@@ -795,9 +933,9 @@
       <class Id="c03db567-a1b1-48ba-85ec-44345e4d8843" name="GraphicObject" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="84f3c623-1494-480d-b5eb-584b2781bfcc" />
         <generalsInternal>
-          <generalization Id="770fb2db-a188-456f-8a02-e84bfa1d83c0" isSubstitutable="false">
+          <generalization Id="4d07a6a6-2ba4-47fd-964b-00071ba6d782" isSubstitutable="false">
             <classMoniker Id="ad539174-8cf2-48ec-ac95-8c511aae4b06" LastKnownName="Object" />
-            <elementDefinition Id="f248a6dd-34e6-42e8-bb73-1f4c03a01afb" />
+            <elementDefinition Id="4a94a9b8-9e6c-482f-a254-2adf2c791f2a" />
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
@@ -836,6 +974,11 @@
                   <type_NamedElement>
                     <referencedTypeMoniker Id="89aa657a-7dcb-466a-98ad-afd4a713e596" LastKnownName="void" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9e7d7fa6-e87e-4996-bc73-23533657e571" name="ofstream&amp; stream" direction="In" isUnique="false">
+                  <elementDefinition Id="73cc40fc-9792-407f-9ce7-507abc6e1a19" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -882,7 +1025,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="ec1a8799-9a25-4cfd-9151-8f1d79eeb612" name="Rectangle" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="ec1a8799-9a25-4cfd-9151-8f1d79eeb612" name="Rectangle" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="c00f19e9-ec88-46b0-a413-ecf94ae5f630" />
         <generalsInternal>
           <generalization Id="8d8fbc08-3fc6-421d-bc12-052a3d9849db" isSubstitutable="false">
@@ -905,7 +1048,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="20af960b-fa82-4c55-b62d-c4544d12640f" name="Write" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="20af960b-fa82-4c55-b62d-c4544d12640f" name="Write" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e853a180-ed84-4a15-9bbc-67d774eba4e0" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -927,7 +1070,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="4caab37d-3f03-4f2b-948a-d5a27b2fc32d" name="Circle" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="4caab37d-3f03-4f2b-948a-d5a27b2fc32d" name="Circle" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b782a3a4-1c15-4b73-8c8f-c4666f5c20d1" />
         <generalsInternal>
           <generalization Id="a515116b-da25-45e6-b881-2b1f231e6836" isSubstitutable="false">
@@ -944,7 +1087,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="a1abcb31-e946-4f29-97bd-6b5ea7770e0b" name="Write" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="a1abcb31-e946-4f29-97bd-6b5ea7770e0b" name="Write" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="675258e2-02bf-4d3a-8693-2584354794ba" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -998,6 +1141,11 @@
     <packageHasNamedElement>
       <referencedType Id="feaae1ac-83fd-4ae9-8b1c-6bba0cbe9b01" name="GraphicObject&amp;" isAbstract="false" isLeaf="false" cachedFullName="GraphicObject&amp;">
         <elementDefinition Id="4382be6b-f397-4aea-94a1-cfd3281f167d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6c54e708-97a0-4bc6-8e20-56249961837c" name="T_DERIVED" isAbstract="false" isLeaf="false" cachedFullName="T_DERIVED">
+        <elementDefinition Id="3bd8fb8c-f3d5-46d8-b355-a1e127584d8b" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

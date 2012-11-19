@@ -76,7 +76,7 @@ commentstyle=\color{dkgreen},       % comment style
 \subsection{Zeitaufwand}
 	\begin {itemize}
 		\item geschätzte Mh: 20h
-		\item tatsächlich: Reinhard (11h), Bernhard  (9h)
+		\item tatsächlich: Reinhard (11h), Bernhard  (11h)
 	\end {itemize}
 
 
@@ -90,7 +90,7 @@ Es soll eine Software für die Erzeugung und Verwaltung von Bildern mit graphisc
 
 \subsection {Klassendiagramm}
 
-%\includegraphics[angle=90,scale=0.6] {../Klassendiagramm.png}
+\includegraphics[angle=90,scale=0.4] {../Klassendiagramm.png}
 
 \newpage
 \subsection {Komponentenübersicht}
@@ -207,7 +207,7 @@ Rückgabetyp: void.
 \newline
 Parameter: string const\& filename1, string const\& filename2
 \newline
-Liest die Daten von der Datei mit den Vierecken und der Datei mit den Kreisen ein, erzeugt die Objekte mit der jeweiligen Fabrik und fügt sie dann der Liste mit den Graphischen Objekten hinzu.
+Liest die Daten von der Datei mit den Vierecken und der Datei mit den Kreisen ein, erzeugt die Objekte mit der jeweiligen Fabrik und fügt sie dann der Liste mit den Graphischen Objekten hinzu. Wenn fehlerhafte Daten (bei x,y,radius,width,height) in der Datei sind werden diese durch den stringstream in Zahlen umgewandelt. Fill und Stroke werden nicht überprüft. Wenn in der Datei noch zusätzliche Elemente sind, werden diese ignoriert.
 \\
 
 \textbf {Methode "WriteSVG": } 
@@ -292,6 +292,46 @@ Haben Write Funktionen die noch die entsprechenden Daten zum Stream hinzufügen.
 \\
 
 \newpage
+\section {Dateibeschreibung}
+\subsection {Datei mit Daten für "Rectangle"}
+Dateiname: *Rect.data
+\newline
+Inhalt: Daten für die Vierecke.
+\newline
+EBNF:
+\begin{verbatim}
+file = {rectangle}.
+rectangle = x y width height stroke [fill].
+x = y = width = height = number.
+number = digit {digit}.
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9".
+stroke = fill = word.
+word = letter {letter}.
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | 
+	   "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | 
+	   "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z".
+\end{verbatim}
+
+
+\subsection {Datei mit Daten für "Circle"}
+Dateiname: *Circ.data
+\newline
+Inhalt: Daten für die Kreise.
+\newline
+EBNF:
+\begin{verbatim}
+file = {circle}.
+circle = x y width height stroke [fill].
+x = y = radius = number.
+number = digit {digit}.
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9".
+word = letter {letter}.
+letter =  "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | 
+	    "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | 
+	    "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z".
+\end{verbatim}
+
+\newpage
 \section {Source Code}
 
 \lstinputlisting[language=C++]{\CodePath Object.h}
@@ -366,7 +406,29 @@ Haben Write Funktionen die noch die entsprechenden Daten zum Stream hinzufügen.
 \section {Testausgaben} 
 
 \begin {verbatim}
+Testcase0: Not existing files
+AddImage(Filled) ... Image.cpp::ReadData: 
+File with Rectangle Data couldn't be opened
+done
+AddImage(Empty) ... Image.cpp::ReadData: 
+File with Rectangle Data couldn't be opened
+done
+WriteSVG ... done
 
+Testcase1: Empty files
+AddImage(Filled) ... done
+AddImage(Empty) ... done
+WriteSVG ... done
+
+Testcase2: Files with correct data
+AddImage(Filled) ... done
+AddImage(Empty) ... done
+WriteSVG ... done
+
+Testcase3: Files with wrong data
+AddImage(Filled) ... done
+AddImage(Empty) ... done
+WriteSVG ... done
 \end {verbatim}
 
 

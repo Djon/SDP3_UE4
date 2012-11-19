@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : RectangleEmpty.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 18.11.2012
+// Description : Implementation of class RectangleEmpty
+///////////////////////////////////////////////////////////////////////////
+
 #include <fstream>
 #include <iostream>
 #include "RectangleEmpty.h"

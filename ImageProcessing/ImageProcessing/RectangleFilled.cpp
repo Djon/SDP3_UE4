@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : RectangleFilled.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 18.11.2012
+// Description : Implementation of class RectangleFilled
+///////////////////////////////////////////////////////////////////////////
+
 #include <fstream>
 #include <iostream>
 #include "RectangleFilled.h"

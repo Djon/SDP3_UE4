@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : FilledGraphicObjectFactory.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 18.11.2012
+// Description : Implementation of class FilledGraphicObjectFactory
+///////////////////////////////////////////////////////////////////////////
+
 #include "FilledGraphicObjectFactory.h"
 #include "RectangleFilled.h"
 #include "CircleFilled.h"

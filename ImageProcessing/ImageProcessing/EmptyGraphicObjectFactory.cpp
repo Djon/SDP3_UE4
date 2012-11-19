@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : EmptyGraphicObjectFactory.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 18.11.2012
+// Description : Implementation of class EmptyGraphicObjectFactory
+///////////////////////////////////////////////////////////////////////////
+
 #include "EmptyGraphicObjectFactory.h"
 #include "RectangleEmpty.h"
 #include "CircleEmpty.h"

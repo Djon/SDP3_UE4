@@ -3,6 +3,8 @@
 #include "CircleEmpty.h"
 #include "Image.h"
 
+EmptyGraphicObjectFactory::EmptyGraphicObjectFactory() {}
+
 Rectangle* EmptyGraphicObjectFactory::CreateRectangle(size_t const& posX, size_t const& posY, 
 	size_t const& width, size_t const& height, std::string const& stroke)
 {

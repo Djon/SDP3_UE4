@@ -25,6 +25,7 @@ public:
 		std::string const& SVGFileName, IGraphicObjectFactory* factory);
 
 	void WriteSVG();
+	
 private:
 	std::list<Image*> mImageList;
 

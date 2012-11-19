@@ -22,7 +22,7 @@ Image::~Image()
 void Image::WriteSVG()
 {
 	try {
-		std::ofstream file(mFileNameSVG);
+		std::ofstream file(mFileNameSVG, std::fstream::out);
 		if (!file.is_open())
 		{
 			std::string ex("File couldn't be opened");
@@ -105,7 +105,7 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 				buffer.erase(0,pos+1);
 
 				//fill exists or doesnt exist
-				if (buffer != "")
+				if (buffer == "")
 				{
 					fill = stroke;
 				}
@@ -113,7 +113,7 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 				{
 					std::stringstream(buffer.substr(0,pos)) >> fill;
 				}
-				mFactory->CreateRectangle(posX,posY,width,height,stroke,fill);
+				mGraphicObjects.push_back(mFactory->CreateRectangle(posX,posY,width,height,stroke,fill));
 			}
 		}
 		file1.close();
@@ -154,7 +154,7 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 				buffer.erase(0,pos+1);
 
 				//fill exists or doesnt exist
-				if (buffer != "")
+				if (buffer == "")
 				{
 					fill = stroke;	//if doesnt exist it gets color of stroke
 				}
@@ -162,7 +162,8 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 				{
 					std::stringstream(buffer.substr(0,pos)) >> fill;
 				}
-				mFactory->CreateCircle(posX,posY,radius,stroke,fill);
+				buffer.erase();
+				mGraphicObjects.push_back(mFactory->CreateCircle(posX,posY,radius,stroke,fill));
 			}
 		}
 		file2.close();

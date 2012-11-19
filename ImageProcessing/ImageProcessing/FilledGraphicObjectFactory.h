@@ -20,8 +20,10 @@ class FilledGraphicObjectFactory :
 {
 	friend class SingletonBase<FilledGraphicObjectFactory>;
 public:
-	Rectangle* CreateRectangle(size_t const& posX, size_t const& posY, size_t const& width, size_t const& height, std::string const& stroke, std::string const& fill);
-	Circle* CreateCircle(size_t const& posX, size_t const& posY, size_t const& radius, std::string const& stroke, std::string const& fill);
+	Rectangle* CreateRectangle(size_t const& posX, size_t const& posY, size_t const& width, 
+		size_t const& height, std::string const& stroke, std::string const& fill);
+	Circle* CreateCircle(size_t const& posX, size_t const& posY, size_t const& radius, 
+		std::string const& stroke, std::string const& fill);
 private:
 	FilledGraphicObjectFactory();
 };

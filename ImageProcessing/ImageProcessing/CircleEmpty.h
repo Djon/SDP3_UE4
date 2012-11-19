@@ -9,19 +9,18 @@
 #define CIRCLEEMPTY_H
 
 #include <string>
+#include <fstream>
 #include "Circle.h"
 
 class CircleEmpty
 	: public Circle
 {
 public:
-	//Default CTor
-	CircleEmpty();
+	//CTor
+	CircleEmpty(size_t const& posX, size_t const& posY, size_t const& radius, 
+		std::string const& stroke);
 
-	//virtual Destructor
-	virtual ~CircleEmpty();
-
-	virtual void Write();
+	virtual void Write(std::ofstream& stream);
 };
 
 #endif

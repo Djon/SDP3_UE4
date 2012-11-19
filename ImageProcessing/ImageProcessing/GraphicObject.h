@@ -12,6 +12,14 @@
 #include <fstream>
 #include "Object.h"
 
+std::string const begin = "<";
+std::string const stroke = "stroke=";
+std::string const fill = "fill=";
+std::string const end = "/>";
+std::string const space = " ";
+std::string const qM = "\"";	//Quotation Mark
+std::string const empty("none");
+
 class GraphicObject 
 	: public Object
 {
@@ -19,10 +27,7 @@ public:
 	//Default CTor
 	GraphicObject();
 
-	//virtual Destructor
-	virtual ~GraphicObject();
-
-	virtual void Write(std::ofstream& stream);
+	virtual void Write(std::ofstream& stream) = 0;
 protected:
 	std::string mFill;
 	std::string mStroke;

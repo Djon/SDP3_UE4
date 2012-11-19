@@ -9,19 +9,18 @@
 #define RECTANGLEEMPTY_H
 
 #include <string>
+#include <fstream>
 #include "Rectangle.h"
 
 class RectangleEmpty
 	: public Rectangle
 {
 public:
-	//Default CTor
-	RectangleEmpty();
+	//CTor
+	RectangleEmpty(size_t const& posX, size_t const& posY, size_t const& height, 
+		size_t const& width, std::string const& stroke);
 
-	//virtual Destructor
-	virtual ~RectangleEmpty();
-
-	virtual void Write();
+	virtual void Write(std::ofstream& stream);
 };
 
 #endif

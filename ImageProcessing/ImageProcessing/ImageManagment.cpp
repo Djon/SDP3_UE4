@@ -3,9 +3,13 @@
 #include "ImageManagment.h"
 #include "Image.h"
 
-
-ImageManagment::ImageManagment()
-{}
+ImageManagment::~ImageManagment()
+{
+	std::for_each(mImageList.begin(),mImageList.end(),[](Image* img)
+	{
+		delete img;
+	});
+}
 
 void ImageManagment::AddImage(std::string const& filename1, std::string const& filename2, 
 	std::string const& SVGFileName, IGraphicObjectFactory* factory)

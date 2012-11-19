@@ -2,6 +2,9 @@
 #include <iostream>
 #include "Rectangle.h"
 
+Rectangle::Rectangle() : mHeight(0), mWidth(0)
+{}
+
 void Rectangle::Write(std::ofstream& stream)
 {
 	try {
@@ -11,7 +14,7 @@ void Rectangle::Write(std::ofstream& stream)
 			throw(ex);
 		}
 
-		stream << begin << space 
+		stream << begin << rect << space
 			   << x << qM << mPosX << qM << space
 			   << y << qM << mPosY << qM << space
 			   << width << qM << mWidth << qM << space

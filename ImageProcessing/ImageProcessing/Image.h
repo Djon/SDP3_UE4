@@ -25,7 +25,7 @@ class Image
 	: public Object
 {
 public:
-	//Default CTor
+	//CTor
 	Image(std::string const& str, IGraphicObjectFactory* factory);
 
 	//virtual Destructor

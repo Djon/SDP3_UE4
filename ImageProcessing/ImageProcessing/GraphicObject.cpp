@@ -1,5 +1,5 @@
 #include "GraphicObject.h"
 
-//GraphicObject::GraphicObject(GraphicObject const& s) {}
-
-//GraphicObject& GraphicObject::operator = (GraphicObject const& s) {}
+GraphicObject::GraphicObject() 
+	: mPosX(0), mPosY(0), mStroke(""), mFill("")
+{}

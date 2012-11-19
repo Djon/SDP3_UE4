@@ -9,7 +9,13 @@
 #define CIRCLE_H
 
 #include <string>
+#include <fstream>
 #include "GraphicObject.h"
+
+std::string const circle = "circle";
+std::string const cx = "cx=";
+std::string const cy = "cy=";
+std::string const radius = "r=";
 
 class Circle 
 	: public GraphicObject
@@ -18,10 +24,7 @@ public:
 	//Default CTor
 	Circle();
 
-	//virtual Destructor
-	virtual ~Circle();
-
-	virtual void Write();
+	virtual void Write(std::ofstream& stream);
 protected:
 	size_t mRadius;
 };

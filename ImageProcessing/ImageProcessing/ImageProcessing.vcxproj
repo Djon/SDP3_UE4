@@ -82,6 +82,7 @@
     <ClCompile Include="GraphicObject.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="ImageManagment.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RectangleEmpty.cpp" />

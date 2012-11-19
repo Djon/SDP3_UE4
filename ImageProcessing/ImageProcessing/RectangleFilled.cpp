@@ -2,7 +2,8 @@
 #include <iostream>
 #include "RectangleFilled.h"
 
-RectangleFilled::RectangleFilled(size_t const& posX, size_t const& posY, size_t const& width, size_t const& height, std::string const& stroke, std::string const& fill)
+RectangleFilled::RectangleFilled(size_t const& posX, size_t const& posY, size_t const& width, 
+	size_t const& height, std::string const& stroke, std::string const& fill)
 {
 	mPosX = posX;
 	mPosY = posY;
@@ -18,7 +19,7 @@ void RectangleFilled::Write(std::ofstream& stream)
 		Rectangle::Write(stream);
 		if (!stream.is_open())
 		{
-			std::string ex("File couldn't be opened");
+			std::string ex("Stream couldn't be opened");
 			throw(ex);
 		}
 		stream << space << fill << qM << mFill << qM << end << std::endl;

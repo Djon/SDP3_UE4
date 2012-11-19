@@ -12,27 +12,18 @@
 #include <fstream>
 #include "GraphicObject.h"
 
-std::string const begin = "<";
 std::string const rect = "rect";
 std::string const x = "x=";
 std::string const y = "y=";
 std::string const width = "width=";
 std::string const height = "height=";
-std::string const stroke = "stroke=";
-std::string const fill = "fill=";
-std::string const end = "/>";
-std::string const space = " ";
-std::string const qM = "\"";	//Quotation Mark
 
 class Rectangle 
 	: public GraphicObject
 {
 public:
 	//Default CTor
-	//Rectangle();
-
-	//virtual Destructor
-	virtual ~Rectangle();
+	Rectangle();
 
 	virtual void Write(std::ofstream& stream);
 protected:

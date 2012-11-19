@@ -1,12 +1,22 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <algorithm>
+#include <iterator>
 #include "Image.h"
 
 Image::Image(std::string const& str, IGraphicObjectFactory* factory)
 {
 	mFileNameSVG = str;
 	mFactory = factory;
+}
+
+Image::~Image()
+{
+	std::for_each(mGraphicObjects.begin(),mGraphicObjects.end(),[](GraphicObject* obj)
+	{
+		delete obj;
+	});
 }
 
 void Image::WriteSVG()
@@ -21,11 +31,10 @@ void Image::WriteSVG()
 
 		file << version << std::endl << link << std::endl;
 
-		TGraphicObjectsItor itor = mGraphicObjects.begin();
-		for(;itor != mGraphicObjects.end(); ++itor)
+		std::for_each(mGraphicObjects.begin(),mGraphicObjects.end(),[&file](GraphicObject* obj)
 		{
-			(*itor)->Write(file);
-		}
+			obj->Write(file);
+		});
 
 		file << endSVG;
 		file.close();
@@ -46,7 +55,7 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 	{
 		std::ifstream file1(filename1);	//rectangle
 		std::string buffer;
-		
+
 		//help variables
 		size_t pos = 0;	//position of " " in string
 		size_t posX = 0;
@@ -56,7 +65,7 @@ void Image::ReadData(std::string const& filename1,std::string const& filename2)
 		size_t radius = 0;
 		std::string stroke = "";
 		std::string fill = "";
-		
+
 		if (!file1.is_open())
 		{
 			std::string ex("File with Rectangle Data couldn't be opened");
